@@ -1,0 +1,54 @@
+-week 7
+
+-Foxes and rabbits v2
+
+-MVC maken
+-Main methode toevoegen om hem in eclipse te openen
+-Maak 2 buttons voor 1 step en 100 step
+-Junit test
+-Experimenteer met Eclipse debugger (breakpoints, step into, step over, opvragen van variabelen)
+-Probleemanalyze in het rapport
+1 – Probleemstelling. 
+Hierin dienen jullie het probleem te beschrijven dat jullie met het maken van dit programma proberen op te lossen. Probeer 	de probleemstelling generiek (algemeen) en realistisch te formuleren. Dus niet alleen voor vossen en konijnen, maar 	bijvoorbeeld ook de visstand op de Noordzee of de dierenpopulatie van een eiland in de stille Zuidzee.
+
+2 – Analyse van de huidige situatie.
+Maak een analyse van de basisversie van jullie programma (foxes-and-rabbits-v2). Wat zijn de problemen, wat zijn de verbetermogelijkheden en aan welke functionaliteit heeft de opdrachtgever behoefte?
+Vragen die je jezelf kunt stellen zijn bijvoorbeeld:
+	-	In hoeverre geven de verschillende runs van het programma verschillende dan wel vergelijkbare uitkomsten? 
+	-	Zijn er trends waarneembaar? 
+	-	Zijn er overeenkomsten met het van de economie afkomstige principe van de varkenscyclus (googelen!).
+	-	Hoe onderhoudbaar/uitbreidbaar is de simulatie? Wat zijn de beperkingen?
+
+
+-Week 8
+
+-UML klasse diagram maken (van 1 stap) (hoofdstuk 3 - uitbreiding 1)
+-Verbeter het programma (opdracht 10.38 - 10.51)
+Verbeteringen aan het programma
+Voeg de volgende verbeteringen en uitbreidingen toe aan je programma (opdrachten 10.38-10.51 uit BlueJ):
+-	Implementeer de abstracte superklasse Animal. Onderzoek welke methodes abstract kunnen worden en maak die abstract. 
+-	Implementeer de interface Actor.
+-	Voeg nog een diersoort toe (wolven, beren, etc.). Bepaal van die nieuwe diersoorten of ze prooi- of jachtdieren zijn. Als deze diersoort zowel vossen als konijnen opeet dan is de vos dus een prooi én een roofdier geworden. Hoe voorkom je het “uitsterven” van diersoorten?
+-	Voeg een jager toe. Hoe voorkom je dat de jagers elkaar afschieten? 
+-	Maak gebruik van testklassen of nog beter J-Unit testen om de zelfgemaakte code te testen.
+
+Maak ook een UML klassediagram van je programma ná deze aanpassingen.
+-Bestudeer de MVC van de mvcextended.zip
+-Maak opgaven 10.55 - 10.57 maar ipv simulatorview als interface te implementere ga je abstratview zoals gebruikt in life extenden meteen concrete view subklasse
+-Extra views
+Breid het project met drie extra views, die in grafische vorm informatie over de simulatie weergeven. Bijvoorbeeld: een histogram, een cirkeldiagram en een historische weergave van de populatie (laatste 100 stappen). Geef elk dier zijn eigen kleur.
+-Klassendiagrammen en programmacode in het verslag (bv lettertype 8)
+
+-Week 9
+
+-Brede de gui uit, bv met parameters met standaard waarden
+-betrek er een voedselvooraad bij
+-voeg plaatjes / geluiden toe
+-bedenk minimaal 1 zinvolle en orginele aanvulling
+-Voeg een besmettelijke ziekte toe (boolean ziektgen), moet instelbaar zijn hij is gemiddeld x x generaties besmettelijk
+-wat bregnt de infectie op gang
+-run het programma via de commandline
+-overleg oom nog extra implemntaties toe te voegen
+-beschrijf de aanpassingen in het rapport
+
+-voor het rapport zie de .doc
