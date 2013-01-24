@@ -68,8 +68,11 @@ public class Simulator
 
         // Create a view of the state of each location in the field.
         view = new SimulatorView(depth, width);
-        view.setColor(Rabbit.class, Color.orange);
-        view.setColor(Fox.class, Color.blue);
+        // bruin is(156, 93, 82);
+        Color konijn = new Color( 139, 69, 19 );
+        Color vos    = new Color( 255, 69, 0 );
+        view.setColor(Rabbit.class, konijn);
+        view.setColor(Fox.class, vos);
         
         // Setup a valid starting point.
         reset();
@@ -81,7 +84,7 @@ public class Simulator
      */
     public void runLongSimulation()
     {
-        simulate(4000);
+        simulate(500);
     }
     
     /**
