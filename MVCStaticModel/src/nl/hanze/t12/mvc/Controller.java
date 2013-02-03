@@ -35,4 +35,6 @@ public class Controller extends JPanel implements ActionListener {
 			model.setAantal(model.getAantal()+1);
 		}
 	}
+	
+	
 }

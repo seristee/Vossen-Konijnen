@@ -26,6 +26,7 @@ public class Location
     /**
      * Implement content equality.
      */
+    @Override
     public boolean equals(Object obj)
     {
         if(obj instanceof Location) {

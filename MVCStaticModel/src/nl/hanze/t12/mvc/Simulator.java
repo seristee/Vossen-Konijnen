@@ -13,8 +13,17 @@ import java.awt.Color;
  * @author David J. Barnes and Michael K��lling
  * @version 2011.07.31
  */
-public class Simulator
+public class Simulator extends Model
 {
+    // Colors used for empty locations.
+    private static Color EMPTY_COLOR = Color.white; // check
+
+    // Color used for objects that have no defined color.
+    private static Color UNKNOWN_COLOR = Color.gray;
+    
+    private String STEP_PREFIX = "Step: ";
+	private String POPULATION_PREFIX = "Population: ";
+	
     // Constants representing configuration information for the simulation.
     // The default width for the grid.
     private static final int DEFAULT_WIDTH = 120;
@@ -34,21 +43,14 @@ public class Simulator
     // A graphical view of the simulation.
     private SimulatorView view;
     
+//    private Model model;
+    
     /**
      * Construct a simulation field with default size.
      */
     public Simulator()
     {
         this(DEFAULT_DEPTH, DEFAULT_WIDTH);
-    }
-    
-    /**
-     * Dit is nodig om hem in eclipse te runnen
-     */
-    public static void main(String[] args)
-    {
-        Simulator simulator = new Simulator();
-        simulator.runLongSimulation();
     }
     
     /**
@@ -69,7 +71,7 @@ public class Simulator
         field = new Field(depth, width);
 
         // Create a view of the state of each location in the field.
-        view = new SimulatorView(depth, width);
+        view = new SimulatorView(depth, width, this);
         // bruin is(156, 93, 82);
         Color konijn = new Color( 139, 69, 19 );
         Color vos    = new Color( 255, 69, 0 );
@@ -163,4 +165,36 @@ public class Simulator
             }
         }
     }
+
+	public static Color getColorEmpty() {
+		return EMPTY_COLOR;
+	}
+
+	public static void setColorEmpty(Color eMPTY_COLOR) {
+		EMPTY_COLOR = eMPTY_COLOR;
+	}
+
+	public static Color getColorUnknown() {
+		return UNKNOWN_COLOR;
+	}
+
+	public static void setColorUnknow(Color uNKNOWN_COLOR) {
+		UNKNOWN_COLOR = uNKNOWN_COLOR;
+	}
+
+	public String getSTEP_PREFIX() {
+		return STEP_PREFIX;
+	}
+
+	public void setSTEP_PREFIX(String sTEP_PREFIX) {
+		STEP_PREFIX = sTEP_PREFIX;
+	}
+
+	public String getPOPULATION_PREFIX() {
+		return POPULATION_PREFIX;
+	}
+
+	public void setPOPULATION_PREFIX(String pOPULATION_PREFIX) {
+		POPULATION_PREFIX = pOPULATION_PREFIX;
+	}
 }
