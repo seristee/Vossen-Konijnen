@@ -48,7 +48,7 @@ public class SimulatorView extends View
         
         setLocation(100, 50);
         
-        fieldView = new FieldView(height, width);
+        fieldView = new FieldView(height, width, m);
 
         Container contents = getContentPane();
         contents.add(stepLabel, BorderLayout.NORTH);

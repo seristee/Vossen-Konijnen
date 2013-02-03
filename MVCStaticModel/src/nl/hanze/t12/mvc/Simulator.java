@@ -43,8 +43,6 @@ public class Simulator extends Model
     // A graphical view of the simulation.
     private SimulatorView view;
     
-//    private Model model;
-    
     /**
      * Construct a simulation field with default size.
      */

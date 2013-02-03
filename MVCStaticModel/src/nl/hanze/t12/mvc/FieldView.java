@@ -20,9 +20,10 @@ public class FieldView extends JPanel
     /**
      * Create a new FieldView component.
      */
-    public FieldView(int height, int width)
+    public FieldView(int height, int width, Model model)
     {
-        gridHeight = height;
+        //super(model);
+    	gridHeight = height;
         gridWidth = width;
         size = new Dimension(0, 0);
     }
