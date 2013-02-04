@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import java.util.List;
 import java.util.Random;
@@ -24,8 +24,6 @@ public class Rabbit extends Animal
     private static final int MAX_LITTER_SIZE = 4;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
-    
-    private final String naam = "Rabbit";
     
     // Individual characteristics (instance fields).
     
@@ -81,13 +79,6 @@ public class Rabbit extends Animal
         if(age > MAX_AGE) {
             setDead();
         }
-    }
-    
-    @Override
-    public String getName()
-    {
-    	return naam;
-    
     }
     
     /**

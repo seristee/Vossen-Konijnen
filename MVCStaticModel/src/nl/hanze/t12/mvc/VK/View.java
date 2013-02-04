@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import java.awt.Color;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class View extends JFrame {
 	public View(Model model) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.model=model;
-//		System.out.println(model.toString());
+		System.out.println(model.toString());
 		model.addView(this);
 		//setSize(200, 200);
 		//setVisible(true);

@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import java.util.Random;
 import java.util.List;
@@ -26,9 +26,9 @@ public class Simulator extends Model
 	
     // Constants representing configuration information for the simulation.
     // The default width for the grid.
-    private static final int DEFAULT_WIDTH = 100;
-    // The default depth of the grid
-    private static final int DEFAULT_DEPTH = 100;
+    private static final int DEFAULT_WIDTH = 800;
+    // The default depth of the grid.
+    private static final int DEFAULT_DEPTH = 600;
     // The probability that a fox will be created in any given grid position.
     private static final double FOX_CREATION_PROBABILITY = 0.02;
     // The probability that a rabbit will be created in any given grid position.
@@ -195,13 +195,4 @@ public class Simulator extends Model
 	public void setPOPULATION_PREFIX(String pOPULATION_PREFIX) {
 		POPULATION_PREFIX = pOPULATION_PREFIX;
 	}
-	public int getHeight()
-	{
-		return DEFAULT_DEPTH;
-	}
-	public int getWidth()
-	{
-		return DEFAULT_WIDTH;
-	}
-	
 }

@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import java.awt.*;
 import java.awt.event.*;
@@ -45,9 +45,12 @@ public class SimulatorView extends View
     	super(m);
     	model = m;
     	
+    	System.out.println(height);
+    	System.out.println(width);
+    	
     	//super.setSize(height, width);
     	//setResizable(false);
-//    	this.setLayout(new BorderLayout());
+    	
     	//contentPane.setLayout(null);
     	
     	JButton btnStep1 = new JButton("Step 1");
@@ -79,29 +82,22 @@ public class SimulatorView extends View
         
         setLocation(100, 50);
         
-//        fieldView = new FieldView(height, width, m);
-        fieldView = new FieldView(m.getHeight(), m.getWidth(), m);
-        JPanel subPanel = new JPanel();
+        fieldView = new FieldView(height, width, m);
+
         Container contents = getContentPane();
         //contents.setLayout(null);
 //        contents.add(btnStep1, BorderLayout.WEST);
 //        contents.add(btnStep100, BorderLayout.WEST);
 //        contents.add(btnPause, BorderLayout.WEST);
-
-        subPanel.add(btnStep1);
-        subPanel.add(btnStep100);
-        subPanel.add(btnPause);
-        contents.add(subPanel, BorderLayout.WEST);
-        
-        contents.add(stepLabel, BorderLayout.NORTH);
-        contents.add(fieldView, BorderLayout.EAST);
-        contents.add(population, BorderLayout.SOUTH);
-//        contents.add(btnPause);
-//        contents.add(btnStep1);
-//        contents.add(btnStep100);
-//        contents.add(stepLabel);
-//        contents.add(fieldView);
-//        contents.add(population);
+//        contents.add(stepLabel, BorderLayout.NORTH);
+//        contents.add(fieldView, BorderLayout.CENTER);
+//        contents.add(population, BorderLayout.SOUTH);
+        contents.add(btnPause);
+        contents.add(btnStep1);
+        contents.add(btnStep100);
+        contents.add(stepLabel);
+        contents.add(fieldView);
+        contents.add(population);
         pack();
 //        contents.setBounds(0, 0, 800, 600);
         setVisible(true);
@@ -158,9 +154,7 @@ public class SimulatorView extends View
                     fieldView.drawMark(col, row, getColor(animal.getClass()));
                 }
                 else {
-//                	System.out.println(model.getColorEmpty().toString());
-//                	System.out.println(col);
-//                	System.out.println(row);
+                	//System.out.println(model.getColorEmpty().toString());
                 	fieldView.drawMark(col, row, model.getColorEmpty());
                 }
             }

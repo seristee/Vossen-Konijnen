@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,8 +23,6 @@ public class FieldView extends JPanel
     public FieldView(int height, int width, Model model)
     {
 //        super(model);
-//    	System.out.println(height);
-//    	System.out.println(width);
     	gridHeight = height;
         gridWidth = width;
         size = new Dimension(0, 0);
@@ -66,7 +64,9 @@ public class FieldView extends JPanel
      */
     public void drawMark(int x, int y, Color color)
     {
-    	g.setColor(color);
+    	//System.out.println(g.toString());
+    	this.preparePaint();
+        g.setColor(color);
         g.fillRect(x * xScale, y * yScale, xScale-1, yScale-1);
     }
 

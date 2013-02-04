@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -20,9 +20,9 @@ public class Controller extends JPanel implements ActionListener {
 		pluseen=new JButton("+1");
 		pluseen.addActionListener(this);
 		
-//		btnStep1 = this.model.getButtonStepOne();
-//		btnStep1.addActionListener(this);
-//		
+		//btnStep1 = this.model.getButtonStepOne();
+		//btnStep1.addActionListener(this);
+		
 		this.setLayout(null);
 		add(mineen);
 		add(pluseen);

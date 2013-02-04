@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import java.util.List;
 
@@ -16,7 +16,6 @@ public abstract class Animal
     private Field field;
     // The animal's position in the field.
     private Location location;
-    
     
     /**
      * Create a new animal at location in field.
@@ -91,5 +90,4 @@ public abstract class Animal
     {
         return field;
     }
-    public abstract String getName(); 
 }

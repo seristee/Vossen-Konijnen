@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+ 
 
 import java.util.List;
 import java.util.Iterator;
@@ -28,7 +28,6 @@ public class Fox extends Animal
     private static final int RABBIT_FOOD_VALUE = 9;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
-    private final String naam = "Fox";
     
     // Individual characteristics (instance fields).
     // The fox's age.
@@ -174,12 +173,5 @@ public class Fox extends Animal
     private boolean canBreed()
     {
         return age >= BREEDING_AGE;
-    }
-    
-    @Override
-    public String getName()
-    {
-    	return naam;
-    
     }
 }
