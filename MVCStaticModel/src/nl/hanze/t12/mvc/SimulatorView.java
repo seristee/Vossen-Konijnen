@@ -44,24 +44,18 @@ public class SimulatorView extends View
     {	
     	super(m);
     	model = m;
-    	
-    	//super.setSize(height, width);
-    	//setResizable(false);
-//    	this.setLayout(new BorderLayout());
-    	//contentPane.setLayout(null);
+   
+    	setResizable(false);
     	
     	JButton btnStep1 = new JButton("Step 1");
-//    	btnStep1.setLayout(null);
     	btnStep1.setBounds(0, 11, 89, 23);
     	
     	
     	JButton btnStep100 = new JButton("Step 100");
-//    	btnStep100.setLayout(null);
     	btnStep100.setBounds(0, 45, 89, 23);
     	
     	
     	JButton btnPause = new JButton("Pause");
-//    	btnPause.setLayout(null);
     	btnPause.setBounds(0, 59, 89, 23);
     	
     	
@@ -70,40 +64,27 @@ public class SimulatorView extends View
 
         setTitle("Fox and Rabbit Simulation");
         
-//        stepLabel = new JLabel(model.getSTEP_PREFIX(), JLabel.CENTER);
-//        population = new JLabel(model.getPOPULATION_PREFIX(), JLabel.CENTER);
-        stepLabel = new JLabel(model.getSTEP_PREFIX());
-        stepLabel.setBounds((width/2)-30, 0, 60, 20);
-        population = new JLabel(model.getPOPULATION_PREFIX());
-        
+        stepLabel = new JLabel(model.getSTEP_PREFIX(), JLabel.CENTER);
+        population = new JLabel(model.getPOPULATION_PREFIX(), JLabel.CENTER);
         
         setLocation(100, 50);
         
-//        fieldView = new FieldView(height, width, m);
         fieldView = new FieldView(m.getHeight(), m.getWidth(), m);
         JPanel subPanel = new JPanel();
-        Container contents = getContentPane();
-        //contents.setLayout(null);
-//        contents.add(btnStep1, BorderLayout.WEST);
-//        contents.add(btnStep100, BorderLayout.WEST);
-//        contents.add(btnPause, BorderLayout.WEST);
-
+        subPanel.setPreferredSize(new Dimension(100, this.HEIGHT));
+        
         subPanel.add(btnStep1);
         subPanel.add(btnStep100);
         subPanel.add(btnPause);
-        contents.add(subPanel, BorderLayout.WEST);
+       
         
+        Container contents = getContentPane();
         contents.add(stepLabel, BorderLayout.NORTH);
         contents.add(fieldView, BorderLayout.EAST);
         contents.add(population, BorderLayout.SOUTH);
-//        contents.add(btnPause);
-//        contents.add(btnStep1);
-//        contents.add(btnStep100);
-//        contents.add(stepLabel);
-//        contents.add(fieldView);
-//        contents.add(population);
+        
+        contents.add(subPanel, BorderLayout.WEST);
         pack();
-//        contents.setBounds(0, 0, 800, 600);
         setVisible(true);
     }
     
