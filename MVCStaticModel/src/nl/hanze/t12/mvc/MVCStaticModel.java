@@ -12,10 +12,15 @@ public class MVCStaticModel {
 	private Simulator simulator;
 	
 	public MVCStaticModel() {
-		model=new Model();
-		controller=new Controller(model);
-		countview=new CountView(model);
-		//pieview=new PieView(model);
+
+		simulator = new Simulator();
+		controller=new Controller(simulator);
+		simulator.runLongSimulation();
+		
+//		model=new Model();
+//		controller=new Controller(model);		
+//		countview=new CountView(model);
+//		pieview=new PieView(model);
 //		screen=new JFrame("Model View Controller/Static Model");
 //		screen.setSize(450, 285);
 //		screen.setResizable(false);
@@ -30,7 +35,5 @@ public class MVCStaticModel {
 //		screen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 //		screen.setVisible(true);
 		//simulatorView = new SimulatorView(800, 600);
-		simulator = new Simulator();
-		simulator.runLongSimulation();
 	}
 }

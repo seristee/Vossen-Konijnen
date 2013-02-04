@@ -11,8 +11,10 @@ import javax.swing.*;
 public class View extends JFrame {
   
     private Model model;
+    private JPanel contentPane;
     
 	public View(Model model) {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.model=model;
 		model.addView(this);
 		//setSize(200, 200);

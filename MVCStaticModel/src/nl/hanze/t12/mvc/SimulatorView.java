@@ -3,6 +3,8 @@ package nl.hanze.t12.mvc;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -27,6 +29,8 @@ public class SimulatorView extends View
     
     private Simulator model;
 
+    private JPanel contentPane;
+    
     /**
      * Create a view of the given width and height.
      * @param height The simulation's height.
@@ -34,10 +38,16 @@ public class SimulatorView extends View
      * @param model The model of this simulation instance
      */
     public SimulatorView(int height, int width, Simulator m)
-    {
+    {	
     	super(m);
     	model = m;
-    	
+
+//		setBounds(100, 100, 689, 549);
+//		contentPane = new JPanel();
+//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+//		setContentPane(contentPane);
+//		contentPane.setLayout(null);
+//    	
     	stats = new FieldStats();
         colors = new LinkedHashMap<Class, Color>();
 
