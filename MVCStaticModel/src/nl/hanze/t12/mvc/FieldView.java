@@ -22,7 +22,7 @@ public class FieldView extends JPanel
      */
     public FieldView(int height, int width, Model model)
     {
-        //super(model);
+//        super(model);
     	gridHeight = height;
         gridWidth = width;
         size = new Dimension(0, 0);
@@ -64,7 +64,7 @@ public class FieldView extends JPanel
      */
     public void drawMark(int x, int y, Color color)
     {
-        g.setColor(color);
+    	g.setColor(color);
         g.fillRect(x * xScale, y * yScale, xScale-1, yScale-1);
     }
 

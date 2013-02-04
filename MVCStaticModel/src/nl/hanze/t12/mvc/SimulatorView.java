@@ -28,8 +28,11 @@ public class SimulatorView extends View
     private FieldStats stats;
     
     private Simulator model;
-
+  
     private JPanel contentPane;
+    private JButton btnStep1;
+    private JButton btnStep100;
+    private JButton btnPause;
     
     /**
      * Create a view of the given width and height.
@@ -40,14 +43,20 @@ public class SimulatorView extends View
     public SimulatorView(int height, int width, Simulator m)
     {	
     	super(m);
-    	model = m;
-
-//		setBounds(100, 100, 689, 549);
-//		contentPane = new JPanel();
-//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-//		setContentPane(contentPane);
-//		contentPane.setLayout(null);
-//    	
+    	model = m; 
+    	
+    	JButton btnStep1 = new JButton("Step 1");
+    	btnStep1.setBounds(0, 11, 89, 23);
+    	
+    	
+    	JButton btnStep100 = new JButton("Step 100");
+    	btnStep100.setBounds(0, 45, 89, 23);
+    	
+    	
+    	JButton btnPause = new JButton("Pause");
+    	btnPause.setBounds(-1, 59, 89, 23);
+    	
+    	
     	stats = new FieldStats();
         colors = new LinkedHashMap<Class, Color>();
 
@@ -56,11 +65,16 @@ public class SimulatorView extends View
         stepLabel = new JLabel(model.getSTEP_PREFIX(), JLabel.CENTER);
         population = new JLabel(model.getPOPULATION_PREFIX(), JLabel.CENTER);
         
+        
+        
         setLocation(100, 50);
         
         fieldView = new FieldView(height, width, m);
 
         Container contents = getContentPane();
+        contents.add(btnStep1, BorderLayout.WEST);
+        contents.add(btnStep100, BorderLayout.WEST);
+        contents.add(btnPause, BorderLayout.WEST);
         contents.add(stepLabel, BorderLayout.NORTH);
         contents.add(fieldView, BorderLayout.CENTER);
         contents.add(population, BorderLayout.SOUTH);
@@ -119,6 +133,7 @@ public class SimulatorView extends View
                     fieldView.drawMark(col, row, getColor(animal.getClass()));
                 }
                 else {
+                	//System.out.println(model.getColorEmpty().toString());
                 	fieldView.drawMark(col, row, model.getColorEmpty());
                 }
             }
@@ -136,6 +151,12 @@ public class SimulatorView extends View
     public boolean isViable(Field field)
     {
         return stats.isViable(field);
+    }
+    
+    public JButton getButtonStepOne()
+    {
+    	return btnStep1;
+    	
     }
     
     /**

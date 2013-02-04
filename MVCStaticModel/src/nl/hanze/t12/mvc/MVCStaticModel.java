@@ -13,8 +13,8 @@ public class MVCStaticModel {
 	
 	public MVCStaticModel() {
 
-		simulator = new Simulator();
-		controller=new Controller(simulator);
+		simulator = new Simulator(); // <- extends model
+		controller = new Controller(simulator);
 		simulator.runLongSimulation();
 		
 //		model=new Model();
