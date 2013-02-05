@@ -10,6 +10,7 @@ import java.util.Map;
 
 /**
  * A graphical view of the simulation grid.
+ * A graphical view of the simulation grid.
  * The view displays a colored rectangle for each location 
  * representing its contents. It uses a default background color.
  * Colors for each type of species can be defined using the
@@ -30,9 +31,9 @@ public class SimulatorView extends View
     private Simulator model;
   
     //private JPanel contentPane;
-    private JButton btnStep1;
-    private JButton btnStep100;
-    private JButton btnPause;
+    protected JButton btnStep1;
+    protected JButton btnStep100;
+    protected JButton btnPause;
     
     /**
      * Create a view of the given width and height.
@@ -139,9 +140,6 @@ public class SimulatorView extends View
                     fieldView.drawMark(col, row, getColor(animal.getClass()));
                 }
                 else {
-//                	System.out.println(model.getColorEmpty().toString());
-//                	System.out.println(col);
-//                	System.out.println(row);
                 	fieldView.drawMark(col, row, model.getColorEmpty());
                 }
             }
