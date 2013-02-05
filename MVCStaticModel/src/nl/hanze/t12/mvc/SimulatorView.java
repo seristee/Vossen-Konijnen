@@ -50,6 +50,7 @@ public class SimulatorView extends View
     	
     	JButton btnStep1 = new JButton("Step 1");
     	btnStep1.setBounds(0, 11, 89, 23);
+    	//btnStep1.addActionListener(null);
     	
     	
     	JButton btnStep100 = new JButton("Step 100");
@@ -58,6 +59,7 @@ public class SimulatorView extends View
     	
     	JButton btnPause = new JButton("Pause");
     	btnPause.setBounds(0, 59, 89, 23);
+    	
     	
     	
     	stats = new FieldStats();
@@ -159,10 +161,21 @@ public class SimulatorView extends View
         return stats.isViable(field);
     }
     
+    @Override
     public JButton getButtonStepOne()
     {
+    	//System.out.println(btnStep1.toString());
     	return btnStep1;
-    	
+    }
+    
+    public JButton getButtonStep100()
+    {
+    	return btnStep100;
+    }
+    
+    public JButton getButtonPause()
+    {
+    	return btnPause;
     }
     
     /**

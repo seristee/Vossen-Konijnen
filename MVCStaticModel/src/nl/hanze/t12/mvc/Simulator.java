@@ -48,7 +48,7 @@ public class Simulator extends Model
      */
     public Simulator()
     {
-        this(DEFAULT_DEPTH, DEFAULT_WIDTH);
+    	this(DEFAULT_DEPTH, DEFAULT_WIDTH);
     }
     
     /**
@@ -70,9 +70,25 @@ public class Simulator extends Model
 
         // Create a view of the state of each location in the field.
         view = new SimulatorView(depth, width, this);
+        super.addView(view);
+        //System.out.println(super.getViews().toString());
+      
         // bruin is(156, 93, 82);
-        Color konijn = new Color( 139, 69, 19 );
-        Color vos    = new Color( 255, 69, 0 );
+        //Color konijn = new Color( 139, 69, 19 );
+        //Color vos    = new Color( 255, 69, 0 );
+        
+        /** Color parameters
+         *  @param red
+         *  @param green 
+         *  @param blue
+         *   
+         *  values ranges between 0 and 255 (Just like HTML / CSS)
+         *  
+         */
+        
+        Color konijn = new Color(0,0,255); 
+        Color vos = new Color(0,255,0);
+        
         view.setColor(Rabbit.class, konijn);
         view.setColor(Fox.class, vos);
         

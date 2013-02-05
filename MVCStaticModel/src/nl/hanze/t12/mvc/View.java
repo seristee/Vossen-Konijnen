@@ -11,6 +11,9 @@ public class View extends JFrame {
   
     private Model model;
     private JPanel contentPane;
+	private JButton btnStep1;
+	private JButton btnStep100;
+	private JButton btnPause;
     
 	public View(Model model) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,5 +36,18 @@ public class View extends JFrame {
 		repaint();
 	}
 	
-	
+    public JButton getButtonStepOne()
+    {
+    	return btnStep1;
+    }
+    
+    public JButton getButtonStep100()
+    {
+    	return btnStep100;
+    }
+    
+    public JButton getButtonPause()
+    {
+    	return btnPause;
+    }
 }

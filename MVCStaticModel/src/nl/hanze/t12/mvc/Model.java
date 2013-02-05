@@ -26,9 +26,9 @@ public class Model {
 		views.add(view);
 	}
 	
-	public View getView() 
+	public ArrayList<View> getViews() 
 	{
-		return null;
+		return views;
 	}
 	private void notifyViews() {
 		for(View v: views) v.updateView();
