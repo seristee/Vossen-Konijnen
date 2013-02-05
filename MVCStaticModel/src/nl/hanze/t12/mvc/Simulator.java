@@ -102,7 +102,7 @@ public class Simulator extends Model
      */
     public void runLongSimulation()
     {
-        simulate(500);
+        simulate(4000);
     }
     
     /**
@@ -141,6 +141,7 @@ public class Simulator extends Model
         animals.addAll(newAnimals);
 
         view.showStatus(step, field);
+        //view.updateView();
     }
         
     /**

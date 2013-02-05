@@ -7,18 +7,17 @@ import javax.swing.JButton;
 
 public class ControllerSimulatorView extends Controller 
 {
-	private Model model;
-//	private JButton btnStep1;
-//	private JButton btnStep100;
-//	private JButton btnPause;
+	private Simulator model;
+	private JButton btnStep1;
+	private JButton btnStep100;
+	private JButton btnPause;
 	private ArrayList<View> views;
 	
-	public ControllerSimulatorView(Model m)
+	public ControllerSimulatorView(Simulator m)
 	{
 		super(m);
 		model = m;
 		views = model.getViews();
-		System.out.println(views.toString());
 		this.setActionListeners();
 	}
 	
@@ -26,22 +25,36 @@ public class ControllerSimulatorView extends Controller
 	{
 		for(View v : views)
 		{
-			//JButton btnStep1 = v.getButtonStepOne();
-			//System.out.println(btnStep1.toString());
-			//btnStep1.addActionListener(this);
-			//btnStep100 = v.getButtonStep100();
-			//btnPause = v.getButtonPause();
-			//v.getButtonStepOne().addActionListener(this);
+			btnStep1 = v.getButtonStepOne();
+			btnStep1.addActionListener(this);
+			
+			btnStep100 = v.getButtonStep100();
+			btnStep100.addActionListener(this);
+			
+			btnPause = v.getButtonPause();
+			btnPause.addActionListener(this);
+			
 		}
 	}
 	
 	public void actionPerformed(ActionEvent e)
 	{
-//		if (e.getSource() == btnStep1) 
-//		{
-//			System.out.println("1 stap verder");
-//		}
+		if (e.getSource() == btnStep1) 
+		{
+			//System.out.println("1 stap verder");
+			model.simulateOneStep();
+		}
 		
+		if (e.getSource() == btnStep100)
+		{
+			//System.out.println("100 stappen verder");
+			model.simulate(100);
+		}
+		
+		if (e.getSource() == btnPause)
+		{
+			System.out.println("Pauzeer");
+		}
 		
 	}
 }

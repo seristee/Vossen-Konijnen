@@ -48,16 +48,15 @@ public class SimulatorView extends View
    
     	setResizable(false);
     	
-    	JButton btnStep1 = new JButton("Step 1");
+    	btnStep1 = new JButton("Step 1");
     	btnStep1.setBounds(0, 11, 89, 23);
-    	//btnStep1.addActionListener(null);
     	
     	
-    	JButton btnStep100 = new JButton("Step 100");
+    	btnStep100 = new JButton("Step 100");
     	btnStep100.setBounds(0, 45, 89, 23);
     	
     	
-    	JButton btnPause = new JButton("Pause");
+    	btnPause = new JButton("Pause");
     	btnPause.setBounds(0, 59, 89, 23);
     	
     	
