@@ -34,7 +34,7 @@ public class Simulator extends Model
     // The probability that a rabbit will be created in any given grid position.
     private static final double RABBIT_CREATION_PROBABILITY = 0.06;
     // The probability that a killerbunny will be created in any given grid position.
-    private static final double KILLERBUNNY_CREATION_PROBABILITY = 0.50;
+    private static final double KILLERBUNNY_CREATION_PROBABILITY = 0.01;
     // The probability that a hunter will be created in any given grid position.    
     private static final double HUNTER_CREATION_PROBABILITY = 0.10;
     
@@ -85,7 +85,7 @@ public class Simulator extends Model
          *  @param red
          *  @param green 
          *  @param blue
-         *   
+         *  Color(red, green, blue) 
          *  values ranges between 0 and 255 (Just like HTML / CSS)
          *  
          */
@@ -108,7 +108,7 @@ public class Simulator extends Model
      */
     public void runLongSimulation()
     {
-        simulate(100);
+        simulate(500);
     }
     
     /**
