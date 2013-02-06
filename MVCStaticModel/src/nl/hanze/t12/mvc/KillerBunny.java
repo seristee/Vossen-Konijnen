@@ -32,7 +32,7 @@ public class KillerBunny extends Animal{
     private int foodLevel;
 
     /**
-     * Create a fox. A fox can be created as a new born (age zero
+     * Create a killerbunny. A killerbunny can be created as a new born (age zero
      * and not hungry) or with a random age and food level.
      * 
      * @param randomAge If true, the killbunny will have random age and hunger level.
@@ -105,7 +105,7 @@ public class KillerBunny extends Animal{
     }
     
     /**
-     * Look for rabbits adjacent to the current location.
+     * Look for food adjacent to the current location.
      * Only the first live rabbit is eaten.
      * @return Where food was found, or null if it wasn't.
      */
@@ -124,8 +124,18 @@ public class KillerBunny extends Animal{
                     foodLevel = RABBIT_FOOD_VALUE;
                     // Remove the dead rabbit from the field.
                     return where;
-                }
-            }
+                }    
+            } else if(animal instanceof Fox) {
+            	Fox fox = (Fox) animal;
+            		if(fox.isAlive()) {
+            			fox.setDead();
+            			foodLevel = FOX_FOOD_VALUE;
+            			return where;
+            		}
+//            } else if (animal instanceof Hunter) {
+//            	
+//            }
+        }
         }
         return null;
     }

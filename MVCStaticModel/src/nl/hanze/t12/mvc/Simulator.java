@@ -33,8 +33,11 @@ public class Simulator extends Model
     private static final double FOX_CREATION_PROBABILITY = 0.02;
     // The probability that a rabbit will be created in any given grid position.
     private static final double RABBIT_CREATION_PROBABILITY = 0.06;
+    // The probability that a killerbunny will be created in any given grid position.
     private static final double KILLERBUNNY_CREATION_PROBABILITY = 0.50;
-
+    // The probability that a hunter will be created in any given grid position.    
+    private static final double HUNTER_CREATION_PROBABILITY = 0.10;
+    
     // List of animals in the field.
     private List<Animal> animals;
     // The current state of the field.
@@ -184,6 +187,10 @@ public class Simulator extends Model
                     KillerBunny killerBunny = new KillerBunny(true, field, location);
                     animals.add(killerBunny);
                 }
+//                else if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY) {
+//                    Location location = new Location(row, col);
+//                    Hunter hunter = new Hunter(true, field, location);
+//                    animals.add(hunter);
                 // else leave the location empty.
             }
         }
