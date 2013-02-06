@@ -163,15 +163,15 @@ public class SimulatorView extends View
     @Override
     public JButton getButtonStepOne()
     {
-    	//System.out.println(btnStep1.toString());
     	return btnStep1;
     }
     
+    @Override
     public JButton getButtonStep100()
     {
     	return btnStep100;
     }
-    
+    @Override
     public JButton getButtonPause()
     {
     	return btnPause;

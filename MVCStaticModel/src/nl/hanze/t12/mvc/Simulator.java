@@ -32,7 +32,8 @@ public class Simulator extends Model
     // The probability that a fox will be created in any given grid position.
     private static final double FOX_CREATION_PROBABILITY = 0.02;
     // The probability that a rabbit will be created in any given grid position.
-    private static final double RABBIT_CREATION_PROBABILITY = 0.08;    
+    private static final double RABBIT_CREATION_PROBABILITY = 0.06;
+    private static final double KILLERBUNNY_CREATION_PROBABILITY = 0.50;
 
     // List of animals in the field.
     private List<Animal> animals;
@@ -88,9 +89,11 @@ public class Simulator extends Model
         
         Color konijn = new Color(0,0,255); 
         Color vos = new Color(0,255,0);
+        Color killerBunny = new Color(255,0,0);
         
         view.setColor(Rabbit.class, konijn);
         view.setColor(Fox.class, vos);
+        view.setColor(KillerBunny.class, killerBunny);
         
         // Setup a valid starting point.
         reset();
@@ -102,7 +105,7 @@ public class Simulator extends Model
      */
     public void runLongSimulation()
     {
-        simulate(4000);
+        simulate(100);
     }
     
     /**
@@ -176,6 +179,11 @@ public class Simulator extends Model
                     Rabbit rabbit = new Rabbit(true, field, location);
                     animals.add(rabbit);
                 }
+                else if(rand.nextDouble() <= KILLERBUNNY_CREATION_PROBABILITY) {
+                    Location location = new Location(row, col);
+                    KillerBunny killerBunny = new KillerBunny(true, field, location);
+                    animals.add(killerBunny);
+                }
                 // else leave the location empty.
             }
         }
@@ -185,32 +193,32 @@ public class Simulator extends Model
 		return EMPTY_COLOR;
 	}
 
-	public static void setColorEmpty(Color eMPTY_COLOR) {
-		EMPTY_COLOR = eMPTY_COLOR;
+	public static void setColorEmpty(Color c) {
+		EMPTY_COLOR = c;
 	}
 
 	public static Color getColorUnknown() {
 		return UNKNOWN_COLOR;
 	}
 
-	public static void setColorUnknow(Color uNKNOWN_COLOR) {
-		UNKNOWN_COLOR = uNKNOWN_COLOR;
+	public static void setColorUnknow(Color c) {
+		UNKNOWN_COLOR = c;
 	}
 
 	public String getSTEP_PREFIX() {
 		return STEP_PREFIX;
 	}
 
-	public void setSTEP_PREFIX(String sTEP_PREFIX) {
-		STEP_PREFIX = sTEP_PREFIX;
+	public void setSTEP_PREFIX(String s) {
+		STEP_PREFIX = s;
 	}
 
 	public String getPOPULATION_PREFIX() {
 		return POPULATION_PREFIX;
 	}
 
-	public void setPOPULATION_PREFIX(String pOPULATION_PREFIX) {
-		POPULATION_PREFIX = pOPULATION_PREFIX;
+	public void setPOPULATION_PREFIX(String s) {
+		POPULATION_PREFIX = s;
 	}
 	public int getHeight()
 	{
