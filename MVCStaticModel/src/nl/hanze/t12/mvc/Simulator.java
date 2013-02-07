@@ -110,6 +110,7 @@ public class Simulator extends Model
     	DiagramController x = new DiagramController(this);
     	x.getPercentages();
     }
+    
     /**
      * Run the simulation from its current state for a reasonably long period,
      * (100 steps).

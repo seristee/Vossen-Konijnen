@@ -134,10 +134,6 @@ public class KillerBunny extends Animal
             			foodLevel += FOX_FOOD_VALUE;
             			return where;
             		}
-<<<<<<< HEAD
-            }
-            
-=======
 
 //            if(animal instanceof Rabbit) {
 //                Rabbit rabbit = (Rabbit) animal;
@@ -166,7 +162,6 @@ public class KillerBunny extends Animal
         }
 
 //            }
->>>>>>> Few minor changes
         }
         return null;
     }

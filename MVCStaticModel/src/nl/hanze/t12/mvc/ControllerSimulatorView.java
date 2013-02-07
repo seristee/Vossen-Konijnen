@@ -52,15 +52,7 @@ public class ControllerSimulatorView extends Controller
 		
 		if (e.getSource() == btnStep100)
 		{
-			for(int i=1; i <= 100; i++)
-			{
-				simulator.simulateOneStep();
-//				simulator.simulate(100);
-				for(View v : views)
-					v.updateView();
-//					v.repaint();
-					
-			}
+			simulator.simulate(100);
 		}
 		
 		if (e.getSource() == btnPause)

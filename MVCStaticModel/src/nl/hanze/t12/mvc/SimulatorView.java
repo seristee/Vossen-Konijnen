@@ -187,7 +187,7 @@ public class SimulatorView extends View
     {
     	return btnDiag;
     }
-    
+   
     /**
      * Provide a graphical view of a rectangular field. This is 
      * a nested class (a class defined inside a class) which
