@@ -68,7 +68,6 @@ public class ControllerSimulatorView extends Controller
 			System.out.println("Pauzeer");
 		}
 		
-<<<<<<< HEAD
 		if (e.getSource() == btnDiag)
 		{
 			System.out.println("IK BEN EEN DIAGRAM YO");
@@ -78,8 +77,5 @@ public class ControllerSimulatorView extends Controller
 			System.out.println("DIAGRAM! DISENGAGE");
 		}
 		*/
-=======
->>>>>>> Few minor changes
-		
 	}
 }
