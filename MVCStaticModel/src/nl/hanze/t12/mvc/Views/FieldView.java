@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Views;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -6,6 +6,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.JPanel;
+
+import nl.hanze.t12.mvc.Models.Model;
 
 public class FieldView extends JPanel
 {

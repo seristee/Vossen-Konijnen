@@ -1,9 +1,13 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Views;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+
+import nl.hanze.t12.mvc.Logic.Field;
+import nl.hanze.t12.mvc.Logic.FieldStats;
+import nl.hanze.t12.mvc.Models.Simulator;
 
 
 import java.util.LinkedHashMap;
@@ -90,8 +94,8 @@ public class SimulatorView extends View
         contents.add(stepLabel, BorderLayout.NORTH);
         contents.add(fieldView, BorderLayout.EAST);
         contents.add(population, BorderLayout.SOUTH);
-        
         contents.add(subPanel, BorderLayout.WEST);
+        
         pack();
         setVisible(true);
     }

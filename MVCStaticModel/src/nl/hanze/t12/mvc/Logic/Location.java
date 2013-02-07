@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Logic;
 
 /**
  * Represent a location in a rectangular grid.

@@ -1,6 +1,8 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Views;
 
 import java.awt.*;
+
+import nl.hanze.t12.mvc.Models.Model;
 
 
 @SuppressWarnings("serial")

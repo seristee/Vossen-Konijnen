@@ -1,6 +1,9 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Controllers;
 
 import javax.swing.*;
+
+import nl.hanze.t12.mvc.Models.Model;
+
 import java.awt.event.*;
 
 @SuppressWarnings("serial")

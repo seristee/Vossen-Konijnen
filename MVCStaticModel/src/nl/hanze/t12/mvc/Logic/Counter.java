@@ -1,4 +1,4 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Logic;
 
 import java.awt.Color;
 

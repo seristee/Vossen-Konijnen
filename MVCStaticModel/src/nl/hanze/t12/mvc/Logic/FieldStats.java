@@ -1,7 +1,8 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Logic;
 
 import java.awt.Color;
 import java.util.HashMap;
+
 
 /**
  * This class collects and provides some statistical data on the state 

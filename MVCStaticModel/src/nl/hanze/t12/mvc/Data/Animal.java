@@ -1,6 +1,9 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Data;
 
 import java.util.List;
+
+import nl.hanze.t12.mvc.Logic.Field;
+import nl.hanze.t12.mvc.Logic.Location;
 
 /**
  * A class representing shared characteristics of animals.
@@ -42,7 +45,7 @@ public abstract class Animal
      * Check whether the animal is alive or not.
      * @return true if the animal is still alive.
      */
-    protected boolean isAlive()
+    public boolean isAlive()
     {
         return alive;
     }

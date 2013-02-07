@@ -1,7 +1,9 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Models;
 
 import java.awt.Color;
 import java.util.*;
+
+import nl.hanze.t12.mvc.Views.View;
 
 
 public class Model {

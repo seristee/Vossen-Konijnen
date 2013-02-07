@@ -1,10 +1,11 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Logic;
 
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+
 
 /**
  * Represent a rectangular grid of field positions.

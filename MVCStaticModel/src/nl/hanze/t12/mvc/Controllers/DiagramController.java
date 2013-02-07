@@ -1,7 +1,10 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import nl.hanze.t12.mvc.Data.Animal;
+import nl.hanze.t12.mvc.Models.Simulator;
 
 public class DiagramController {
 	private Simulator sim;

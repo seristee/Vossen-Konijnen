@@ -1,20 +1,20 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Logic;
 
 import java.util.Random;
 
 /**
  * Provide control over the randomization of the simulation.
  * 
- * @author David J. Barnes and Michael K��lling
+ * @author David J. Barnes and Michael Keelling
  * @version 2011.07.31
  */
 public class Randomizer
 {
-    // The default seed for control of randomization.
+//	The default seed for control of randomization.
 //	private static Random randomGenerator = new Random();
 //	private static int randInt = randomGenerator.nextInt();
 //	private static final int SEED = randInt;
-// //   private static int SEED = 1111;
+//  private static int SEED = 1111;
 //	//private static final int SEED = rand.setSeed(rand.nextInt(9999));
 	private static Random randomGenerator = new Random();
 	private static int randInt = randomGenerator.nextInt();
@@ -27,9 +27,6 @@ public class Randomizer
      */
     public Randomizer()
     { 
-//    	rand.setSeed(rand.nextInt(9999));
-//    	rand = new Random(SEED);
-    	
     }
 
     /**

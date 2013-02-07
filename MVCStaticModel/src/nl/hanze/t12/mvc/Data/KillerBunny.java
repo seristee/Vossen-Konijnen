@@ -1,8 +1,12 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Data;
 
 import java.util.List;
 import java.util.Iterator;
 import java.util.Random;
+
+import nl.hanze.t12.mvc.Logic.Field;
+import nl.hanze.t12.mvc.Logic.Location;
+import nl.hanze.t12.mvc.Logic.Randomizer;
 
 public class KillerBunny extends Animal
 {

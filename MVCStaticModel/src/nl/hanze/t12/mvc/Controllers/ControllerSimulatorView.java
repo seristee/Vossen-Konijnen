@@ -1,9 +1,12 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Controllers;
 
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+
+import nl.hanze.t12.mvc.Models.Simulator;
+import nl.hanze.t12.mvc.Views.View;
 
 
 public class ControllerSimulatorView extends Controller 

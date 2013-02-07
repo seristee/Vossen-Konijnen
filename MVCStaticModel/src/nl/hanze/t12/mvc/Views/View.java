@@ -1,9 +1,11 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Views;
 
 import java.awt.Color;
 import java.util.Map;
 
 import javax.swing.*;
+
+import nl.hanze.t12.mvc.Models.Model;
 
 
 

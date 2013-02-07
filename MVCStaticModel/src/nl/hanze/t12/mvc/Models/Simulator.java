@@ -1,10 +1,21 @@
-package nl.hanze.t12.mvc;
+package nl.hanze.t12.mvc.Models;
 
 import java.util.Random;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.Color;
+
+import nl.hanze.t12.mvc.Controllers.DiagramController;
+import nl.hanze.t12.mvc.Data.Animal;
+import nl.hanze.t12.mvc.Data.Fox;
+import nl.hanze.t12.mvc.Data.Hunter;
+import nl.hanze.t12.mvc.Data.KillerBunny;
+import nl.hanze.t12.mvc.Data.Rabbit;
+import nl.hanze.t12.mvc.Logic.Field;
+import nl.hanze.t12.mvc.Logic.Location;
+import nl.hanze.t12.mvc.Logic.Randomizer;
+import nl.hanze.t12.mvc.Views.SimulatorView;
 
 
 /**
@@ -155,14 +166,13 @@ public class Simulator extends Model
         for(Iterator<Animal> it = animals.iterator(); it.hasNext(); ) {
             Animal animal = it.next();
             animal.act(newAnimals);
-            if(! animal.isAlive()) {
+            if(!animal.isAlive()) {
                 it.remove();
             }
         }
                
         // Add the newly born foxes and rabbits (and killerbunnies) to the main lists.
         animals.addAll(newAnimals);
-
         view.showStatus(step, field);
         
     }
@@ -204,11 +214,11 @@ public class Simulator extends Model
                     KillerBunny killerBunny = new KillerBunny(true, field, location);
                     animals.add(killerBunny);
                 }
-//                else if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY) {
-//                    Location location = new Location(row, col);
-//                    Hunter hunter = new Hunter(true, field, location);
-//                    animals.add(hunter);
-//                }
+                else if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY) {
+                    Location location = new Location(row, col);
+                    Hunter hunter = new Hunter(true, field, location);
+                    animals.add(hunter);
+                }
                 //else  leave the location empty.
             }
         }
