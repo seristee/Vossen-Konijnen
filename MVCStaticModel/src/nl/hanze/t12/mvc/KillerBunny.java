@@ -10,18 +10,18 @@ public class KillerBunny extends Animal
     // Characteristics shared by all foxes (class variables).
     
     // The age at which a killerbunny can start to breed.
-    private static final int BREEDING_AGE = 1;
+    private static final int BREEDING_AGE = 10;
     // The age to which a killerbunny can live.
-    private static final int MAX_AGE = 50;
+    private static final int MAX_AGE = 25;
     // The likelihood of a killerbunny breeding.
     private static final double BREEDING_PROBABILITY = 0.08;
     // The maximum number of births.
     private static final int MAX_LITTER_SIZE = 1;
     // The food value of a single rabbit. In effect, this is the
     // number of steps a killerbunny can go before it has to eat again.
-    private static final int RABBIT_FOOD_VALUE = 2;
-    private static final int FOX_FOOD_VALUE = 3;
-    private static final int HUNTER_FOOD_VALUE = 4;
+    private static final int RABBIT_FOOD_VALUE = 15;
+    private static final int FOX_FOOD_VALUE = 15;
+    private static final int HUNTER_FOOD_VALUE = 1000;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
     private final String name = "KillerBunny";
@@ -121,7 +121,6 @@ public class KillerBunny extends Animal
         while(it.hasNext()) {
             Location where = it.next();
             Object animal = field.getObjectAt(where);
-<<<<<<< HEAD
             if(animal instanceof Rabbit) {
                 Rabbit rabbit = (Rabbit) animal;
                 if(rabbit.isAlive()) { 
@@ -138,39 +137,13 @@ public class KillerBunny extends Animal
             			foodLevel += FOX_FOOD_VALUE;
             			return where;
             		}
-=======
-//            if(animal instanceof Rabbit) {
-//                Rabbit rabbit = (Rabbit) animal;
-//                if(rabbit.isAlive()) { 
-//                    rabbit.setDead();
-//                    foodLevel += RABBIT_FOOD_VALUE;
-//                    // Remove the dead rabbit from the field.
-//                    return where;
-//                }    
-//            } else if(animal instanceof Fox) {
-//            	Fox fox = (Fox) animal;
-//            		if(fox.isAlive()) {
-//            			fox.setDead();
-//            			foodLevel += FOX_FOOD_VALUE;
-//            			return where;
-//            		}
->>>>>>> Week 2
-//            } else if (animal instanceof Hunter) {
-//            	Hunter hunter = (fox) animal;
-//				if(hunter.isAlive()) {
-//            		hunter.setDead();
-//            		foodLevel += HUNTER_FOOD_VALUE;
-//            		return where;
-//            }
-<<<<<<< HEAD
-        }
-=======
-//            }
->>>>>>> Week 2
+            }
+            
         }
         return null;
     }
-    
+
+//            }
     /**
      * Check whether or not this killerbunny is to give birth at this step.
      * New births will be made into free adjacent locations.

@@ -35,6 +35,7 @@ public class SimulatorView extends View
     protected JButton btnStep1;
     protected JButton btnStep100;
     protected JButton btnPause;
+    protected JButton btnDiag;
     
     /**
      * Create a view of the given width and height.
@@ -47,7 +48,7 @@ public class SimulatorView extends View
     	super(m);
     	model = m;
    
-    	setResizable(false);
+    	//setResizable(false);
     	
     	btnStep1 = new JButton("Step 1");
     	btnStep1.setBounds(0, 11, 89, 23);
@@ -59,6 +60,9 @@ public class SimulatorView extends View
     	
     	btnPause = new JButton("Pause");
     	btnPause.setBounds(0, 59, 89, 23);
+    	
+    	btnDiag = new JButton("Populatie");
+    	btnDiag.setBounds(0, 80, 89, 23);
     	
     	
     	
@@ -79,6 +83,7 @@ public class SimulatorView extends View
         subPanel.add(btnStep1);
         subPanel.add(btnStep100);
         subPanel.add(btnPause);
+        subPanel.add(btnDiag);
        
         
         Container contents = getContentPane();
@@ -176,6 +181,11 @@ public class SimulatorView extends View
     public JButton getButtonPause()
     {
     	return btnPause;
+    }
+    @Override
+    public JButton getButtonDiag()
+    {
+    	return btnDiag;
     }
     
     /**

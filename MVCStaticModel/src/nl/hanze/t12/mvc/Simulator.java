@@ -33,11 +33,11 @@ public class Simulator extends Model
     // The probability that a fox will be created in any given grid position.
     private static final double FOX_CREATION_PROBABILITY = 0.02;
     // The probability that a rabbit will be created in any given grid position.
-    private static final double RABBIT_CREATION_PROBABILITY = 0.06;
+    private static final double RABBIT_CREATION_PROBABILITY = 0.045;
     // The probability that a killerbunny will be created in any given grid position.
-    private static final double KILLERBUNNY_CREATION_PROBABILITY = 0.01;
+    private static final double KILLERBUNNY_CREATION_PROBABILITY = 0.005;
     // The probability that a hunter will be created in any given grid position.    
-    private static final double HUNTER_CREATION_PROBABILITY = 0.05;
+    private static final double HUNTER_CREATION_PROBABILITY = 0.01;
     
     // List of animals in the field.
     private List<Animal> animals;
@@ -93,8 +93,8 @@ public class Simulator extends Model
         Color konijn = new Color(0,0,255); 
         Color vos = new Color(0,255,0);
         Color killerBunny = new Color(255,0,0);
-        Color hunter = new Color(112,193,112);
-        //Color hunter = new Color(255,0,255);
+       // Color hunter = new Color(112,193,112);
+        Color hunter = new Color(255,0,255);
         
         view.setColor(Rabbit.class, konijn);
         view.setColor(Fox.class, vos);
@@ -103,8 +103,13 @@ public class Simulator extends Model
         
         // Setup a valid starting point.
         reset();
+        makeDiagramController();
     }
     
+    public void makeDiagramController(){
+    	DiagramController x = new DiagramController(this);
+    	x.getPercentages();
+    }
     /**
      * Run the simulation from its current state for a reasonably long period,
      * (4000 steps).
@@ -121,9 +126,17 @@ public class Simulator extends Model
      */
     public void simulate(int numSteps)
     {
-        for(int step = 1; step <= numSteps && view.isViable(field); step++) {
-            simulateOneStep();
-        }
+    	if(numSteps == 0)
+    	{
+	    	while(true)
+	    	{
+	    		simulateOneStep();
+	    	}
+    	}
+    	else
+    		for(int step = 1; step <= numSteps && view.isViable(field); step++) {
+    			simulateOneStep();
+    		}
     }
     
     /**
@@ -238,6 +251,10 @@ public class Simulator extends Model
 	public int getWidth()
 	{
 		return DEFAULT_WIDTH;
+	}
+	public List<Animal> getAnimals()
+	{
+		return this.animals;
 	}
 	
 }

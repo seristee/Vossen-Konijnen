@@ -5,3 +5,4 @@ public class MVCRunner {
 		new MVCStaticModel();
 	}
 }
+// IK BESTA WEL

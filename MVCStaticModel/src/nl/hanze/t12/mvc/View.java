@@ -15,6 +15,7 @@ public class View extends JFrame {
 	private JButton btnStep1;
 	private JButton btnStep100;
 	private JButton btnPause;
+	private JButton btnDiag;
     
 	public View(Model model) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,5 +51,9 @@ public class View extends JFrame {
     public JButton getButtonPause()
     {
     	return btnPause;
+    }
+    public JButton getButtonDiag()
+    {
+    	return btnDiag;
     }
 }

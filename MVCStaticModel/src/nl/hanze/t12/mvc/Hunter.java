@@ -122,14 +122,13 @@ public class Hunter extends Animal
         while(it.hasNext()) {
             Location where = it.next();
             Object animal = field.getObjectAt(where);
-            if(animal instanceof Fox) {
-                Fox fox = (Fox) animal;
-                if(fox.isAlive()) { 
-                    fox.setDead();
-                    killLevel = 500;
-                    // Remove the dead rabbit from the field.
-                    return where;
-                }
+            if(animal instanceof KillerBunny) {
+            	KillerBunny kb = (KillerBunny) animal;
+            	if(kb.isAlive()) {
+            		kb.setDead();
+            		killLevel = 500;
+            		return where;
+            	}
             }
             else if(animal instanceof Rabbit) {
             	Rabbit rabbit = (Rabbit) animal;
@@ -140,6 +139,16 @@ public class Hunter extends Animal
             		return where;
             	}
             }
+            else if(animal instanceof Fox) {
+                Fox fox = (Fox) animal;
+                if(fox.isAlive()) { 
+                    fox.setDead();
+                    killLevel = 500;
+                    // Remove the dead rabbit from the field.
+                    return where;
+                }
+            }
+            
         }
         return null;
     }

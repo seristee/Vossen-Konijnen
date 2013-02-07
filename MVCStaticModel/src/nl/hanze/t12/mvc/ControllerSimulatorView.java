@@ -12,6 +12,7 @@ public class ControllerSimulatorView extends Controller
 	private JButton btnStep1;
 	private JButton btnStep100;
 	private JButton btnPause;
+	private JButton btnDiag;
 	private ArrayList<View> views;
 	
 	public ControllerSimulatorView(Simulator m)
@@ -36,6 +37,9 @@ public class ControllerSimulatorView extends Controller
 			btnPause = v.getButtonPause();
 			btnPause.addActionListener(this);
 			
+			btnDiag = v.getButtonDiag();
+			btnDiag.addActionListener(this);
+			
 		}
 	}
 	
@@ -57,6 +61,16 @@ public class ControllerSimulatorView extends Controller
 		{
 			System.out.println("Pauzeer");
 		}
+		
+		if (e.getSource() == btnDiag)
+		{
+			System.out.println("IK BEN EEN DIAGRAM YO");
+		}
+		/*if (e.getSource() == btnCloseDiag)
+		{
+			System.out.println("DIAGRAM! DISENGAGE");
+		}
+		*/
 		
 	}
 }
