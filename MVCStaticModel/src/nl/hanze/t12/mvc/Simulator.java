@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.Color;
 
+
 /**
  * A simple predator-prey simulator, based on a rectangular field
  * containing rabbits and foxes.
@@ -75,7 +76,6 @@ public class Simulator extends Model
         // Create a view of the state of each location in the field.
         view = new SimulatorView(depth, width, this);
         super.addView(view);
-        //System.out.println(super.getViews().toString());
       
         // bruin is(156, 93, 82);
         //Color konijn = new Color( 139, 69, 19 );
@@ -146,11 +146,11 @@ public class Simulator extends Model
             }
         }
                
-        // Add the newly born foxes and rabbits to the main lists.
+        // Add the newly born foxes and rabbits (and killerbunnies) to the main lists.
         animals.addAll(newAnimals);
 
         view.showStatus(step, field);
-        //view.updateView();
+        view.updateView();
     }
         
     /**

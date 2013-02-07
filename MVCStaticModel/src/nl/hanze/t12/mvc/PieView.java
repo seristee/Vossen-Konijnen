@@ -2,6 +2,7 @@ package nl.hanze.t12.mvc;
 
 import java.awt.*;
 
+
 @SuppressWarnings("serial")
 public class PieView extends View {
 

@@ -121,6 +121,7 @@ public class KillerBunny extends Animal
         while(it.hasNext()) {
             Location where = it.next();
             Object animal = field.getObjectAt(where);
+<<<<<<< HEAD
             if(animal instanceof Rabbit) {
                 Rabbit rabbit = (Rabbit) animal;
                 if(rabbit.isAlive()) { 
@@ -137,6 +138,23 @@ public class KillerBunny extends Animal
             			foodLevel += FOX_FOOD_VALUE;
             			return where;
             		}
+=======
+//            if(animal instanceof Rabbit) {
+//                Rabbit rabbit = (Rabbit) animal;
+//                if(rabbit.isAlive()) { 
+//                    rabbit.setDead();
+//                    foodLevel += RABBIT_FOOD_VALUE;
+//                    // Remove the dead rabbit from the field.
+//                    return where;
+//                }    
+//            } else if(animal instanceof Fox) {
+//            	Fox fox = (Fox) animal;
+//            		if(fox.isAlive()) {
+//            			fox.setDead();
+//            			foodLevel += FOX_FOOD_VALUE;
+//            			return where;
+//            		}
+>>>>>>> Week 2
 //            } else if (animal instanceof Hunter) {
 //            	Hunter hunter = (fox) animal;
 //				if(hunter.isAlive()) {
@@ -144,7 +162,11 @@ public class KillerBunny extends Animal
 //            		foodLevel += HUNTER_FOOD_VALUE;
 //            		return where;
 //            }
+<<<<<<< HEAD
         }
+=======
+//            }
+>>>>>>> Week 2
         }
         return null;
     }

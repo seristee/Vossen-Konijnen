@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
+
 public class ControllerSimulatorView extends Controller 
 {
 	private Simulator model;
@@ -23,6 +24,7 @@ public class ControllerSimulatorView extends Controller
 	
 	private void setActionListeners()
 	{
+		views.remove(1);
 		for(View v : views)
 		{
 			btnStep1 = v.getButtonStepOne();

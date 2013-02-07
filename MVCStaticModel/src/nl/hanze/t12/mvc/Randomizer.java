@@ -11,11 +11,19 @@ import java.util.Random;
 public class Randomizer
 {
     // The default seed for control of randomization.
+<<<<<<< HEAD
 	private static Random randomGenerator = new Random();
 	private static int randInt = randomGenerator.nextInt();
 	private static final int SEED = randInt;
+=======
+    private static int SEED = 1111;
+	//private static final int SEED = rand.setSeed(rand.nextInt(9999));
+>>>>>>> Week 2
     // A shared Random object, if required.
-    private static final Random rand = new Random(SEED);
+    private static Random rand = new Random(SEED);
+//	private static Random randomGenerator = new Random();
+//	private static int randInt = randomGenerator.nextInt();
+//    private static final int SEED = randInt;
     // Determine whether a shared random generator is to be provided.
     private static final boolean useShared = true;
 
@@ -23,7 +31,10 @@ public class Randomizer
      * Constructor for objects of class Randomizer
      */
     public Randomizer()
-    {
+    { 
+//    	rand.setSeed(rand.nextInt(9999));
+//    	rand = new Random(SEED);
+    	
     }
 
     /**

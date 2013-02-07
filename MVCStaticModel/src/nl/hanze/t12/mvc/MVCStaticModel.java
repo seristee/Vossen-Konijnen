@@ -4,10 +4,10 @@ import javax.swing.*;
 
 public class MVCStaticModel {
 	private Model model;
-	private JFrame screen;
-	private View countview;
-	private View pieview;
-	private SimulatorView simulatorView;
+	//private JFrame screen;
+	//private View countview;
+	//private View pieview;
+	//private SimulatorView simulatorView;
 	private Controller controller;
 	private Simulator simulator;
 	
