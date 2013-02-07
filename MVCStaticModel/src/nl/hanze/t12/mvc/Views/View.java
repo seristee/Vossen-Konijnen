@@ -18,6 +18,9 @@ public class View extends JFrame {
 	private JButton btnStep100;
 	private JButton btnPause;
 	private JButton btnDiag;
+	private JMenuItem close;
+	private JMenuItem settings;
+	private JCheckBoxMenuItem soundItem;
     
 	public View(Model model) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,8 +57,25 @@ public class View extends JFrame {
     {
     	return btnPause;
     }
+    
     public JButton getButtonDiag()
     {
     	return btnDiag;
     }
+
+    public JMenuItem getClose()
+    {
+    	return close;
+    }
+    
+    public JMenuItem getSound()
+    {
+    	return soundItem;
+    }
+    
+    public JMenuItem getSettings()
+    {
+    	return settings;
+    }
+ 
 }

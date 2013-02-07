@@ -36,10 +36,14 @@ public class SimulatorView extends View
     private Simulator model;
   
     //private JPanel contentPane;
-    protected JButton btnStep1;
-    protected JButton btnStep100;
-    protected JButton btnPause;
-    protected JButton btnDiag;
+    private JButton btnStep1;
+    private JButton btnStep100;
+    private JButton btnPause;
+    private JButton btnDiag;
+    private JMenuBar menuBarTop;
+    private JMenuItem close;
+    private JCheckBoxMenuItem sound;
+    private JMenuItem settings;
     private JLabel labeli;
     private ImageIcon imagei;
     
@@ -54,7 +58,30 @@ public class SimulatorView extends View
     	super(m);
     	model = m;
    
-    	//setResizable(false);
+    	setResizable(false);
+    	
+    	// Creates the menuBarTop
+    	menuBarTop = new JMenuBar();
+    	
+    	JMenu file = new JMenu("File");
+    	JMenuItem close = new JMenuItem("Close");
+    	file.add(close);
+    	
+    	JMenu options = new JMenu("Options");
+    	settings = new JMenuItem("Settings");
+    	sound = new JCheckBoxMenuItem("Sound", true);
+    	
+    	options.add(sound);
+    	options.add(settings);
+    	
+    	
+    	menuBarTop.add(file);
+    	menuBarTop.add(options);
+    	
+    	
+    	// Sets the MenuBar
+    	setJMenuBar(menuBarTop);
+    	
     	
     	btnStep1 = new JButton("Step 1");
     	btnStep1.setBounds(0, 11, 89, 23);
@@ -62,7 +89,6 @@ public class SimulatorView extends View
     	
     	btnStep100 = new JButton("Step 100");
     	btnStep100.setBounds(0, 45, 89, 23);
-    	
     	
     	btnPause = new JButton("Pause");
     	btnPause.setBounds(0, 59, 89, 23);
@@ -195,6 +221,22 @@ public class SimulatorView extends View
     {
     	return btnDiag;
     }
+    @Override
+    public JMenuItem getClose()
+    {
+    	return close;
+    }
+    @Override
+    public JMenuItem getSound()
+    {
+    	return sound;
+    }
+    @Override
+    public JMenuItem getSettings()
+    {
+    	return settings;
+    }
+    
    
     /**
      * Provide a graphical view of a rectangular field. This is 

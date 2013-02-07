@@ -122,7 +122,7 @@ public class Simulator extends Model
     
     
     public void init(){
-    	Sound.sound1.play();
+    //	Sound.sound1.play();
     }
     
     public void makeDiagramController(){

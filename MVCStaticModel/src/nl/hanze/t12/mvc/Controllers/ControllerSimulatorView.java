@@ -1,9 +1,12 @@
 package nl.hanze.t12.mvc.Controllers;
 
+import java.applet.AudioClip;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JMenuItem;
 
 import nl.hanze.t12.mvc.Models.Simulator;
 import nl.hanze.t12.mvc.Views.View;
@@ -16,6 +19,10 @@ public class ControllerSimulatorView extends Controller
 	private JButton btnStep100;
 	private JButton btnPause;
 	private JButton btnDiag;
+	private JMenuItem close;
+	private JMenuItem settings;
+	private JCheckBoxMenuItem soundItem;
+	private AudioClip sound;
 	private ArrayList<View> views;
 	
 	public ControllerSimulatorView(Simulator m)
@@ -31,6 +38,8 @@ public class ControllerSimulatorView extends Controller
 		views.remove(1);
 		for(View v : views)
 		{
+			// sound = ...getSound(); 
+			
 			btnStep1 = v.getButtonStepOne();
 			btnStep1.addActionListener(this);
 			
@@ -42,6 +51,15 @@ public class ControllerSimulatorView extends Controller
 			
 			btnDiag = v.getButtonDiag();
 			btnDiag.addActionListener(this);
+			
+//			close = v.getClose();
+//			close.addActionListener(this);
+			
+			settings = v.getSettings();
+			settings.addActionListener(this);
+			
+//			soundItem = v.getSound();
+//			soundItem.addActionListener(this);
 			
 		}
 	}
@@ -67,10 +85,21 @@ public class ControllerSimulatorView extends Controller
 		{
 			System.out.println("IK BEN EEN DIAGRAM YO");
 		}
-		/*if (e.getSource() == btnCloseDiag)
+		if (e.getSource() == close)
 		{
-			System.out.println("DIAGRAM! DISENGAGE");
+			System.out.println("shutting down...");
 		}
-		*/
+		if (e.getSource() == settings)
+		{
+			System.out.println("Settings");
+		}
+//		if (e.getSource == soundItem)
+//		{
+//			if (soundItem.getState() == true) {
+//				sound.play();
+//			} else {
+//				sound.stop();
+//			}
+//		}
 	}
 }
