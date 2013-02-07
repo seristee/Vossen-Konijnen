@@ -51,15 +51,11 @@ public class SimulatorView extends View
     	btnStep1 = new JButton("Step 1");
     	btnStep1.setBounds(0, 11, 89, 23);
     	
-    	
     	btnStep100 = new JButton("Step 100");
     	btnStep100.setBounds(0, 45, 89, 23);
     	
-    	
     	btnPause = new JButton("Pause");
     	btnPause.setBounds(0, 59, 89, 23);
-    	
-    	
     	
     	stats = new FieldStats();
         colors = new LinkedHashMap<Class, Color>();
