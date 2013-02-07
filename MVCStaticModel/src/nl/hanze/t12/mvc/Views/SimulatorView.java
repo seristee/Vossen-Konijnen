@@ -40,6 +40,8 @@ public class SimulatorView extends View
     protected JButton btnStep100;
     protected JButton btnPause;
     protected JButton btnDiag;
+    private JLabel labeli;
+    private ImageIcon imagei;
     
     /**
      * Create a view of the given width and height.
@@ -68,7 +70,8 @@ public class SimulatorView extends View
     	btnDiag = new JButton("Populatie");
     	btnDiag.setBounds(0, 80, 89, 23);
     	
-    	
+    	imagei = new ImageIcon(getClass().getResource("/grass.png"));
+		labeli = new JLabel(imagei);
     	
     	stats = new FieldStats();
         colors = new LinkedHashMap<Class, Color>();
@@ -88,7 +91,7 @@ public class SimulatorView extends View
         subPanel.add(btnStep100);
         subPanel.add(btnPause);
         subPanel.add(btnDiag);
-       
+        add(labeli);
         
         Container contents = getContentPane();
         contents.add(stepLabel, BorderLayout.NORTH);
@@ -96,6 +99,7 @@ public class SimulatorView extends View
         contents.add(population, BorderLayout.SOUTH);
         contents.add(subPanel, BorderLayout.WEST);
         
+        setBackground(Color.GREEN); //speciaal voor Sander :3
         pack();
         setVisible(true);
     }

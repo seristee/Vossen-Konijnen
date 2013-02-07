@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.Color;
 
+import nl.hanze.t12.mvc.Data.Sound;
 import nl.hanze.t12.mvc.Controllers.DiagramController;
 import nl.hanze.t12.mvc.Data.Animal;
 import nl.hanze.t12.mvc.Data.Fox;
@@ -58,6 +59,8 @@ public class Simulator extends Model
     private int step;
     // A graphical view of the simulation.
     private SimulatorView view;
+    private Sound sound;
+    private String name = "Sound";
     
     /**
      * Construct a simulation field with default size.
@@ -117,6 +120,11 @@ public class Simulator extends Model
         makeDiagramController();
     }
     
+    
+    public void init(){
+    	Sound.sound1.play();
+    }
+    
     public void makeDiagramController(){
     	DiagramController x = new DiagramController(this);
     	x.getPercentages();
@@ -128,7 +136,8 @@ public class Simulator extends Model
      */
     public void runLongSimulation()
     {
-        simulate(100);
+        init();
+    	simulate(500);
     }
     
     /**
