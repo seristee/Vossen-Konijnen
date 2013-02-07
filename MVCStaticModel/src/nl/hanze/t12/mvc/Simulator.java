@@ -112,11 +112,11 @@ public class Simulator extends Model
     }
     /**
      * Run the simulation from its current state for a reasonably long period,
-     * (4000 steps).
+     * (100 steps).
      */
     public void runLongSimulation()
     {
-        simulate(500);
+        simulate(100);
     }
     
     /**
@@ -148,7 +148,7 @@ public class Simulator extends Model
     {
         step++;
 
-        // Provide space for newborn animals.
+        //  Provide space for newborn animals.
         List<Animal> newAnimals = new ArrayList<Animal>();        
         // Let all rabbits act.
         for(Iterator<Animal> it = animals.iterator(); it.hasNext(); ) {
@@ -163,7 +163,7 @@ public class Simulator extends Model
         animals.addAll(newAnimals);
 
         view.showStatus(step, field);
-        view.updateView();
+        
     }
         
     /**
@@ -203,11 +203,11 @@ public class Simulator extends Model
                     KillerBunny killerBunny = new KillerBunny(true, field, location);
                     animals.add(killerBunny);
                 }
-                else if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY) {
-                    Location location = new Location(row, col);
-                    Hunter hunter = new Hunter(true, field, location);
-                    animals.add(hunter);
-                }
+//                else if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY) {
+//                    Location location = new Location(row, col);
+//                    Hunter hunter = new Hunter(true, field, location);
+//                    animals.add(hunter);
+//                }
                 //else  leave the location empty.
             }
         }

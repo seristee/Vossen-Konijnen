@@ -8,7 +8,7 @@ import javax.swing.JButton;
 
 public class ControllerSimulatorView extends Controller 
 {
-	private Simulator model;
+	private Simulator simulator;
 	private JButton btnStep1;
 	private JButton btnStep100;
 	private JButton btnPause;
@@ -18,8 +18,8 @@ public class ControllerSimulatorView extends Controller
 	public ControllerSimulatorView(Simulator m)
 	{
 		super(m);
-		model = m;
-		views = model.getViews();
+		simulator = m;
+		views = simulator.getViews();
 		this.setActionListeners();
 	}
 	
@@ -47,14 +47,20 @@ public class ControllerSimulatorView extends Controller
 	{
 		if (e.getSource() == btnStep1) 
 		{
-			//System.out.println("1 stap verder");
-			model.simulateOneStep();
+			simulator.simulateOneStep();
 		}
 		
 		if (e.getSource() == btnStep100)
 		{
-			//System.out.println("100 stappen verder");
-			model.simulate(100);
+			for(int i=1; i <= 100; i++)
+			{
+				simulator.simulateOneStep();
+//				simulator.simulate(100);
+				for(View v : views)
+					v.updateView();
+//					v.repaint();
+					
+			}
 		}
 		
 		if (e.getSource() == btnPause)
@@ -62,6 +68,7 @@ public class ControllerSimulatorView extends Controller
 			System.out.println("Pauzeer");
 		}
 		
+<<<<<<< HEAD
 		if (e.getSource() == btnDiag)
 		{
 			System.out.println("IK BEN EEN DIAGRAM YO");
@@ -71,6 +78,8 @@ public class ControllerSimulatorView extends Controller
 			System.out.println("DIAGRAM! DISENGAGE");
 		}
 		*/
+=======
+>>>>>>> Few minor changes
 		
 	}
 }

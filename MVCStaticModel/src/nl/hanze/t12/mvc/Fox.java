@@ -18,7 +18,11 @@ public class Fox extends Animal
     // The age at which a fox can start to breed.
     private static final int BREEDING_AGE = 15;
     // The age to which a fox can live.
+<<<<<<< HEAD
     private static final int MAX_AGE = 50;
+=======
+    private static final int MAX_AGE = 100;
+>>>>>>> Few minor changes
     // The likelihood of a fox breeding.
     private static final double BREEDING_PROBABILITY = 0.1333;
     // The maximum number of births.
@@ -126,7 +130,7 @@ public class Fox extends Animal
                 Rabbit rabbit = (Rabbit) animal;
                 if(rabbit.isAlive()) { 
                     rabbit.setDead();
-                    foodLevel = RABBIT_FOOD_VALUE;
+                    foodLevel += RABBIT_FOOD_VALUE;
                     // Remove the dead rabbit from the field.
                     return where;
                 }

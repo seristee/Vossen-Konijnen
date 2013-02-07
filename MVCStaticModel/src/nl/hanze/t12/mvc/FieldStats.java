@@ -73,7 +73,6 @@ public class FieldStats
             // We do not have a counter for this species yet.
             // Create one.
             count = new Counter(animalClass.getName());
-//            System.out.println(animalClass.getName());
             counters.put(animalClass, count);
         }
         count.increment();

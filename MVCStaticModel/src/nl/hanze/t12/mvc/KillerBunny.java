@@ -52,8 +52,6 @@ public class KillerBunny extends Animal
             age = 0;
             foodLevel = RABBIT_FOOD_VALUE;
         }
-        System.out.println(age);
-        System.out.println(foodLevel);
     }
     
     /**
@@ -131,14 +129,44 @@ public class KillerBunny extends Animal
                 }    
             } else if(animal instanceof Fox) {
             	Fox fox = (Fox) animal;
-            	System.out.println(fox.toString());
             		if(fox.isAlive()) {
             			fox.setDead();
             			foodLevel += FOX_FOOD_VALUE;
             			return where;
             		}
+<<<<<<< HEAD
             }
             
+=======
+
+//            if(animal instanceof Rabbit) {
+//                Rabbit rabbit = (Rabbit) animal;
+//                if(rabbit.isAlive()) { 
+//                    rabbit.setDead();
+//                    foodLevel += RABBIT_FOOD_VALUE;
+//                    // Remove the dead rabbit from the field.
+//                    return where;
+//                }    
+//            } else if(animal instanceof Fox) {
+//            	Fox fox = (Fox) animal;
+//            		if(fox.isAlive()) {
+//            			fox.setDead();
+//            			foodLevel += FOX_FOOD_VALUE;
+//            			return where;
+//            		}
+
+//            } else if (animal instanceof Hunter) {
+//            	Hunter hunter = (fox) animal;
+//				if(hunter.isAlive()) {
+//            		hunter.setDead();
+//            		foodLevel += HUNTER_FOOD_VALUE;
+//            		return where;
+//            }
+
+        }
+
+//            }
+>>>>>>> Few minor changes
         }
         return null;
     }

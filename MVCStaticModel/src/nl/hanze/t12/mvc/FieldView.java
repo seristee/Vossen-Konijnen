@@ -23,8 +23,6 @@ public class FieldView extends JPanel
     public FieldView(int height, int width, Model model)
     {
 //        super(model);
-//    	System.out.println(height);
-//    	System.out.println(width);
     	gridHeight = height;
         gridWidth = width;
         size = new Dimension(0, 0);

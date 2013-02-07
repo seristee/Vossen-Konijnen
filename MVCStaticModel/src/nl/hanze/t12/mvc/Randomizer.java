@@ -11,6 +11,7 @@ import java.util.Random;
 public class Randomizer
 {
     // The default seed for control of randomization.
+<<<<<<< HEAD
 
 	private static Random randomGenerator = new Random();
 	private static int randInt = randomGenerator.nextInt();
@@ -18,6 +19,13 @@ public class Randomizer
  //   private static int SEED = 1111;
 	//private static final int SEED = rand.setSeed(rand.nextInt(9999));
 
+=======
+	private static Random randomGenerator = new Random();
+	private static int randInt = randomGenerator.nextInt();
+	private static final int SEED = randInt;
+    //private static int SEED = 1111;
+	//private static final int SEED = rand.setSeed(rand.nextInt(9999));
+>>>>>>> Few minor changes
     // A shared Random object, if required.
     private static Random rand = new Random(SEED);
 //	private static Random randomGenerator = new Random();
