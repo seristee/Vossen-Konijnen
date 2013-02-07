@@ -36,7 +36,7 @@ public class Simulator extends Model
     // The probability that a killerbunny will be created in any given grid position.
     private static final double KILLERBUNNY_CREATION_PROBABILITY = 0.01;
     // The probability that a hunter will be created in any given grid position.    
-    private static final double HUNTER_CREATION_PROBABILITY = 0.10;
+    private static final double HUNTER_CREATION_PROBABILITY = 0.05;
     
     // List of animals in the field.
     private List<Animal> animals;
@@ -93,10 +93,13 @@ public class Simulator extends Model
         Color konijn = new Color(0,0,255); 
         Color vos = new Color(0,255,0);
         Color killerBunny = new Color(255,0,0);
+        Color hunter = new Color(112,193,112);
+        //Color hunter = new Color(255,0,255);
         
         view.setColor(Rabbit.class, konijn);
         view.setColor(Fox.class, vos);
         view.setColor(KillerBunny.class, killerBunny);
+        view.setColor(Hunter.class, hunter);
         
         // Setup a valid starting point.
         reset();
@@ -187,11 +190,12 @@ public class Simulator extends Model
                     KillerBunny killerBunny = new KillerBunny(true, field, location);
                     animals.add(killerBunny);
                 }
-//                else if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY) {
-//                    Location location = new Location(row, col);
-//                    Hunter hunter = new Hunter(true, field, location);
-//                    animals.add(hunter);
-                // else leave the location empty.
+                else if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY) {
+                    Location location = new Location(row, col);
+                    Hunter hunter = new Hunter(true, field, location);
+                    animals.add(hunter);
+                }
+                //else  leave the location empty.
             }
         }
     }

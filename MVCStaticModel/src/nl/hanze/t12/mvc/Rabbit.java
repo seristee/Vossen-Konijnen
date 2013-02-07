@@ -25,7 +25,7 @@ public class Rabbit extends Animal
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
     
-    private final String name = "Rabbit";
+    private final String naam = "Rabbit";
     
     // Individual characteristics (instance fields).
     
@@ -86,7 +86,7 @@ public class Rabbit extends Animal
     @Override
     public String getName()
     {
-    	return name;
+    	return naam;
     
     }
     
