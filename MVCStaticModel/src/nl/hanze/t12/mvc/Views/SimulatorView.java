@@ -5,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+
 import nl.hanze.t12.mvc.Logic.Field;
 import nl.hanze.t12.mvc.Logic.FieldStats;
 import nl.hanze.t12.mvc.Models.Simulator;
@@ -36,18 +37,27 @@ public class SimulatorView extends View
     private Simulator model;
   
     private JButton btnStep1;
-    private JButton btnStep100;
+	private JButton btnStep100;
     private JButton btnReset;
-    private JButton btnDiag;
-    private JMenuBar menuBarTop;
-    private JMenuItem close;
-    private JCheckBoxMenuItem sound;
-    private JMenuItem settings;
+	private JButton btnDiag;
+	private JMenuBar menuBarTop;
+	private JMenuItem close;
+	private JCheckBoxMenuItem sound;
+	private JMenuItem settings;
+
+    //private JPanel contentPane;
+
+	private JButton btnDiagPie;
+	private JButton btnDiagBar;
+	private JButton btnDiagClose;
+
     private JLabel labeli;
     private ImageIcon imagei;
     private JFrame frameSettings;
     private JButton btnSettingsOk;
     private JButton btnSettingsCancel;
+    
+    private DiagramView popView;
     
     /**
      * Create a view of the given width and height.
@@ -87,7 +97,8 @@ public class SimulatorView extends View
     	// Sets the MenuBar
     	setJMenuBar(menuBarTop);
     	
-    	
+    	this.popView = new DiagramView(this);
+	
     	btnStep1 = new JButton("Step 1");
     	btnStep1.setBounds(0, 11, 89, 23);
     	
@@ -228,11 +239,6 @@ public class SimulatorView extends View
     	return btnDiag;
     }
     @Override
-    public JMenuItem getClose()
-    {
-    	return close;
-    }
-    @Override
     public JMenuItem getSound()
     {
     	return sound;
@@ -329,4 +335,35 @@ public class SimulatorView extends View
     	frameSettings.pack();
     }
     
+
+    public DiagramView popView()
+    {
+    	return popView;
+    }
+    
+    public void popFrameSetVisible(boolean x)
+    {
+    	this.popView.setVisible(x);
+    	System.out.println("x");
+    }
+    public void setDiagramToBar()
+    {
+    	System.out.println("Test Bar");
+    }
+    public void setDiagramToPie()
+    {
+    	System.out.println("Test Pie");
+    }
+    public JButton getButtonDiagClose(){ return popView.getClose(); }
+    public JButton getButtonDiagBar() { return popView.getBarBtn(); }
+    public JButton getButtonDiagPie() { return popView.getPieBtn(); }
+
+    /**
+     * Provide a graphical view of a rectangular field. This is 
+     * a nested class (a class defined inside a class) which
+     * defines a custom component for the user interface. This
+     * component displays the field.
+     * This is rather advanced GUI stuff - you can ignore this 
+     * for your project if you like.
+     */
 }

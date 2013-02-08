@@ -16,14 +16,14 @@ public class View extends JFrame {
     private JPanel contentPane;
 	private JButton btnStep1;
 	private JButton btnStep100;
-//	private JButton btnPause;
-//	private JButton btnDiag;
-//	protected JButton btnSettingsOk;
-//	protected JButton btnSettingsCancel;
-//	private JFrame settingsFrame;
-//	private JMenuItem close;
-//	private JMenuItem settings;
-//	private JCheckBoxMenuItem soundItem; 
+
+
+	private JButton btnPause;
+	private JButton btnDiag;
+	JButton btnDiagPie = new JButton();
+	JButton btnDiagBar = new JButton();
+	JButton btnDiagClose = new JButton();
+
     
 	public View(Model model) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,4 +99,8 @@ public class View extends JFrame {
     {
     
     }
+    public JButton getButtonDiagClose(){ return null; }
+    public JButton getButtonDiagBar() { return null; }
+    public JButton getButtonDiagPie() { return null; }
+    public DiagramView popView(){ return null; }
 }

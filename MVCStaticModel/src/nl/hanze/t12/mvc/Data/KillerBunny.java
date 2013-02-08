@@ -14,7 +14,7 @@ public class KillerBunny extends Animal
     // Characteristics shared by all foxes (class variables).
     
     // The age at which a killerbunny can start to breed.
-    private static final int BREEDING_AGE = 10;
+    private static final int BREEDING_AGE = 20;
     // The age to which a killerbunny can live.
     private static int MAX_AGE = 25;
     // The likelihood of a killerbunny breeding.

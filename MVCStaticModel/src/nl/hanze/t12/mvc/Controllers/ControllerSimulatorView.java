@@ -21,6 +21,7 @@ public class ControllerSimulatorView extends Controller
 	private JButton btnStep100;
 	private JButton btnPause;
 	private JButton btnDiag;
+
 	private JButton btnSettingsOk;
 	private JButton btnSettingsCancel;
 	private JFrame frameSettings;
@@ -28,6 +29,11 @@ public class ControllerSimulatorView extends Controller
 	private JMenuItem settings;
 	private JCheckBoxMenuItem soundItem;
 	private AudioClip sound;
+
+	private JButton btnDiagClose;
+	private JButton btnDiagPie;
+	private JButton btnDiagBar;
+
 	private ArrayList<View> views;
 	
 	public ControllerSimulatorView(Simulator m)
@@ -57,8 +63,8 @@ public class ControllerSimulatorView extends Controller
 			
 			btnDiag = v.getButtonDiag();
 			btnDiag.addActionListener(this);
-			
-			try {
+
+			try{
 				close = v.getClose();
 				close.addActionListener(this);
 			} catch (NullPointerException e) {
@@ -78,8 +84,14 @@ public class ControllerSimulatorView extends Controller
 			settings = v.getSettings();
 			settings.addActionListener(this);
 			
-				//soundItem = v.getSound();
-				//soundItem.addActionListener(this);
+			btnDiagClose = v.getButtonDiagClose();
+			btnDiagClose.addActionListener(this);
+			
+			btnDiagBar = v.getButtonDiagBar();
+			btnDiagBar.addActionListener(this);
+			
+			btnDiagPie = v.getButtonDiagPie();
+			btnDiagPie.addActionListener(this);
 			}
 	}
 	
@@ -100,16 +112,32 @@ public class ControllerSimulatorView extends Controller
 		if (e.getSource() == btnPause)
 		{
 			System.out.println("Pauzeer");
+			//simulator.getPercentages((ArrayList) simulator.getAnimals()); // JA IK WEET OOK WEL DAT NIET HOORT HET IS 3 UUR SNACHTS
 		}
 		
 		if (e.getSource() == btnDiag)
 		{
-			System.out.println("IK BEN EEN DIAGRAM YO");
+			simulator.makePopView();
 		}
-		if (e.getSource() == close)
+		
+		if (e.getSource() == btnDiagClose)
+		{
+			simulator.disposePopView();
+		}
+		if (e.getSource() == btnDiagPie)
+		{
+			simulator.diagramPieView();
+		}
+		if (e.getSource() == btnDiagBar)
+		{
+			simulator.diagramBarView();
+		}
+
+		/*if (e.getSource() == close)
 		{
 			System.out.println("shutting down...");
-		}
+		}*/
+		
 		if (e.getSource() == settings)
 		{
 			for(View v : views) 
@@ -128,13 +156,6 @@ public class ControllerSimulatorView extends Controller
 			System.out.println("Er is op cancel gedrukt!");
 		}
 		
-//		if (e.getSource == soundItem)
-//		{
-//			if (soundItem.getState() == true) {
-//				sound.play();
-//			} else {
-//				sound.stop();
-//			}
-//		}
 	}
+	
 }
