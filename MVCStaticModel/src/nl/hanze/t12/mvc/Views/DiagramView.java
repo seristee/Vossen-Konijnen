@@ -25,7 +25,7 @@ public class DiagramView extends JFrame{
 	{
 		frame = new JFrame();
 		this.masterView = view;
-		frame.setTitle("Populatie Diagram");
+		frame.setTitle("Population Charts");
 		frame.setAlwaysOnTop(false);
 		frame.setResizable(false);
 		
@@ -33,13 +33,13 @@ public class DiagramView extends JFrame{
 		panel = new ChartPanel();
 		panel.setLayout(null);
 		
-		btnDiagPie = new JButton("Taart Diagram");
-		btnDiagBar = new JButton("Staaf Diagram");
-		btnDiagClose = new JButton("Diagram Sluiten");
+		btnDiagPie = new JButton("Pie chart");
+		btnDiagBar = new JButton("Bar chart");
+		btnDiagClose = new JButton("Close");
 		
 		btnDiagPie.setBounds(6, 6, 117, 29);
 		btnDiagBar.setBounds(6, 41, 117, 29);
-		btnDiagClose.setBounds(6, 76, 117, 29);
+		btnDiagClose.setBounds(6, 380, 117, 29);
 		
 		panel.add(btnDiagPie);
 		panel.add(btnDiagBar);

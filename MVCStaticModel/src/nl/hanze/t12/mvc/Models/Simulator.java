@@ -121,8 +121,13 @@ public class Simulator extends Model
     }
     
     
-    public void init(){
-    //	Sound.sound1.play();
+    public void playSound(boolean b){
+    	if (b == false) 
+    	{
+    		Sound.sound1.stop();
+    	} else if (b == true ) {
+    		Sound.sound1.play();
+    	}
     }
     
     public void makeDiagramController(){
@@ -136,8 +141,8 @@ public class Simulator extends Model
      */
     public void runLongSimulation()
     {
-        init();
-    	simulate(0);
+        playSound(true);
+    	simulate(1000);
     }
     
     /**
@@ -231,37 +236,6 @@ public class Simulator extends Model
                 //else  leave the location empty.
             }
         }
-    }
-    public void makePopView()
-    {
-    	view.popView().setVisible(false);
-    	int[] percentages = getPercentages((ArrayList) animals);
-    	view.popView().getPanel().setAantallen(percentages);
-    	view.popView().getPanel().repaint();
-    	view.popView().setVisible(true);
-    	
-    }
-    public void disposePopView()
-    {
-    	view.popView().setVisible(false);
-    }
-    public void diagramPieView()
-    {
-    	view.popView().setVisible(false);
-    	int[] percentages = getPercentages((ArrayList) animals);
-    	view.popView().getPanel().setAantallen(percentages);
-    	view.popView().getPanel().setMode('p');
-    	view.popView().getPanel().repaint();
-    	view.popView().setVisible(true);
-    }
-    public void diagramBarView()
-    {
-    	view.popView().setVisible(false);
-    	int[] percentages = getPercentages((ArrayList) animals);
-    	view.popView().getPanel().setAantallen(percentages);
-    	view.popView().getPanel().setMode('b');
-    	view.popView().getPanel().repaint();
-    	view.popView().setVisible(true);
     }
     public int[] getPercentages(ArrayList<Animal> animals){
     	int hunter = 0;
@@ -385,5 +359,10 @@ public class Simulator extends Model
 	public void setMaxAgeHunter(int i)
 	{
 		Hunter.setMaxAge(i);
+	}
+	
+	public SimulatorView getView()
+	{
+		return view;
 	}
 }

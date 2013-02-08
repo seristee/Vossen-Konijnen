@@ -42,7 +42,7 @@ public class ChartPanel extends JPanel{
 		}
 		else
 		{
-			g.setColor(Color.RED);
+			g.setColor(Color.PINK);
 			g.fillRect(baseOffsetX , baseOffsetY - (hunterOffset * 4), 90, hunterOffset * 4);
 			
 			g.setColor(Color.BLUE);
@@ -51,7 +51,7 @@ public class ChartPanel extends JPanel{
 			g.setColor(Color.GREEN);
 			g.fillRect(baseOffsetX + 200, baseOffsetY - (foxOffset*4), 90, foxOffset*4);
 			
-			g.setColor(Color.PINK);
+			g.setColor(Color.RED);
 			g.fillRect(baseOffsetX + 300, baseOffsetY - (killerbunnyOffset*4), 90, killerbunnyOffset*4);
 		}
 	}

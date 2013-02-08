@@ -47,17 +47,21 @@ public class SimulatorView extends View
 
     //private JPanel contentPane;
 
-	private JButton btnDiagPie;
-	private JButton btnDiagBar;
-	private JButton btnDiagClose;
-
     private JLabel labeli;
     private ImageIcon imagei;
     private JFrame frameSettings;
     private JButton btnSettingsOk;
     private JButton btnSettingsCancel;
+    private JButton btnCloseDialog;
     
     private DiagramView popView;
+    
+    private JTextField txtMaxAgeKillerBunny; //= new JTextField(model.getMaxAgeKillerBunny());
+    private JTextField txtMaxAgeFox; //= new JTextField(model.getMaxAgeFox());
+    private JTextField txtMaxAgeRabbit; //= new JTextField(model.getMaxAgeRabbit());
+    private JTextField txtMaxAgeHunter;// = //new JTextField(model.getMaxAgeHunter());
+    
+    
     
     /**
      * Create a view of the given width and height.
@@ -70,6 +74,15 @@ public class SimulatorView extends View
     	super(m);
     	model = m;
     	
+    	txtMaxAgeKillerBunny = new JTextField(model.getMaxAgeKillerBunny());
+    	txtMaxAgeFox = new JTextField(model.getMaxAgeFox());
+    	txtMaxAgeRabbit = new JTextField(model.getMaxAgeRabbit());
+    	txtMaxAgeHunter = new JTextField(model.getMaxAgeHunter());
+    	
+    	close = new JMenuItem("Close");
+    	btnSettingsCancel = new JButton("Cancel");
+    	btnSettingsOk = new JButton("OK");
+    	
         createSettingsDialog();
    
     	setResizable(false);
@@ -78,7 +91,6 @@ public class SimulatorView extends View
     	menuBarTop = new JMenuBar();
     	
     	JMenu file = new JMenu("File");
-    	JMenuItem close = new JMenuItem("Close");
     	file.add(close);
     	
     	JMenu options = new JMenu("Options");
@@ -99,6 +111,9 @@ public class SimulatorView extends View
     	
     	this.popView = new DiagramView(this);
 	
+    	btnCloseDialog = new JButton("OK");
+    	btnCloseDialog.setBounds(100, 25, 50, 30);
+    	
     	btnStep1 = new JButton("Step 1");
     	btnStep1.setBounds(0, 11, 89, 23);
     	
@@ -109,7 +124,7 @@ public class SimulatorView extends View
     	btnReset = new JButton("Reset");
     	btnReset.setBounds(0, 59, 89, 23);
     	
-    	btnDiag = new JButton("Populatie");
+    	btnDiag = new JButton("Population");
     	btnDiag.setBounds(0, 80, 89, 23);
     	
     	imagei = new ImageIcon(getClass().getResource("/grass.png"));
@@ -239,7 +254,7 @@ public class SimulatorView extends View
     	return btnDiag;
     }
     @Override
-    public JMenuItem getSound()
+    public JCheckBoxMenuItem getSound()
     {
     	return sound;
     }
@@ -265,17 +280,37 @@ public class SimulatorView extends View
     {
     	return frameSettings;
     }
-    
-    public void setSettingsVisability()
+    @Override
+    public void setSettingsVisability(boolean b)
     {
-    	frameSettings.setVisible(true);
+    	frameSettings.setVisible(b);
+    }
+    
+    @Override
+    public JTextField getTxtMaxAgeHunter()
+    {
+    	return txtMaxAgeHunter;
+    }
+    
+    public JTextField getTxtMaxAgeRabbit() 
+    { 
+    	return txtMaxAgeRabbit; 
+    }
+    public JTextField getTxtMaxAgeFox() 
+    { 
+    	return txtMaxAgeFox;
+    }
+    public JTextField getTxtMaxAgeKillerBunny() 
+    { 
+    	return txtMaxAgeKillerBunny; 
     }
     
     @Override
     public void createSettingsDialog()
     {
     	frameSettings = new JFrame("Settings");
-    	//frameSettings.setResizable(false);
+    	frameSettings.setResizable(false);
+    	frameSettings.setAlwaysOnTop(true);
     	
     	JLabel lblMaxAgeFox = new JLabel("Maximum age fox :");
     	lblMaxAgeFox.setBounds(0, 0, 80, 30);
@@ -289,22 +324,20 @@ public class SimulatorView extends View
     	JLabel lblMaxAgeHunter = new JLabel("Maximum age hunter :");
     	lblMaxAgeHunter.setBounds(0, 60, 80, 30);
     	
-    	JTextField txtMaxAgeFox = new JTextField(model.getMaxAgeFox()); // todo get Values
+    	
     	txtMaxAgeFox.setBounds(0, 0, 80, 30);
     	
-    	JTextField txtMaxAgeKillerBunny = new JTextField(model.getMaxAgeKillerBunny());
+    	
     	txtMaxAgeKillerBunny.setBounds(0, 20, 80, 30);
     	
-    	JTextField txtMaxAgeRabbit = new JTextField(model.getMaxAgeRabbit());
+    	
     	txtMaxAgeRabbit.setBounds(0, 40, 80, 30);
     	
-    	JTextField txtMaxAgeHunter = new JTextField(model.getMaxAgeHunter());
+    	
     	txtMaxAgeHunter.setBounds(0, 60, 80, 30);
     	
-    	btnSettingsOk = new JButton("OK");
     	btnSettingsOk.setBounds(40,100,60,20);
     	
-    	btnSettingsCancel = new JButton("Cancel");
     	btnSettingsCancel.setBounds(110, 100, 60, 20);
     	
     	// 2 subpanels!
@@ -335,6 +368,10 @@ public class SimulatorView extends View
     	frameSettings.pack();
     }
     
+    public JButton getResetButton() 
+    { 
+    	return btnReset; 
+    }
 
     public DiagramView popView()
     {
@@ -354,16 +391,29 @@ public class SimulatorView extends View
     {
     	System.out.println("Test Pie");
     }
-    public JButton getButtonDiagClose(){ return popView.getClose(); }
-    public JButton getButtonDiagBar() { return popView.getBarBtn(); }
-    public JButton getButtonDiagPie() { return popView.getPieBtn(); }
-
-    /**
-     * Provide a graphical view of a rectangular field. This is 
-     * a nested class (a class defined inside a class) which
-     * defines a custom component for the user interface. This
-     * component displays the field.
-     * This is rather advanced GUI stuff - you can ignore this 
-     * for your project if you like.
-     */
+    public JMenuItem getClose()
+    {
+    	return close;
+    }
+    
+    public JButton getButtonDiagClose()
+    { 
+    	return popView.getClose(); 
+    }
+    
+    public JButton getButtonDiagBar() 
+    { 
+    	return popView.getBarBtn(); 
+    }
+    
+    public JButton getButtonDiagPie() 
+    { 
+    	return popView.getPieBtn();
+    }
+    
+    @Override
+    public JButton getDialogCloseBtn()
+    {
+    	return btnCloseDialog;
+    }
 }

@@ -71,7 +71,7 @@ public class View extends JFrame {
     	return null;
     }
     
-    public JMenuItem getSound() { return null; }
+    public JCheckBoxMenuItem getSound() { return null; }
     
     public JMenuItem getSettings() { return null; }
     
@@ -80,10 +80,7 @@ public class View extends JFrame {
     	
     }
     
-    public JButton getOkSettingsButton()
-    {
-    	return null;
-    }
+    public JButton getOkSettingsButton() { return null; }
     
     public JButton getCancelSettingsButton()
     {
@@ -95,12 +92,18 @@ public class View extends JFrame {
     	return null;
     }
     
-    public void setSettingsVisability()
-    {
+    public JTextField getTxtMaxAgeHunter() { return null; }
+    public JTextField getTxtMaxAgeRabbit() { return null; }
+    public JTextField getTxtMaxAgeFox() { return null; }
+    public JTextField getTxtMaxAgeKillerBunny() { return null; }
     
-    }
+    public void setSettingsVisability(boolean b) {  }
+    
     public JButton getButtonDiagClose(){ return null; }
     public JButton getButtonDiagBar() { return null; }
     public JButton getButtonDiagPie() { return null; }
     public DiagramView popView(){ return null; }
+    public JButton getResetButton() { return null; }
+    public JButton getDialogCloseBtn() { return null; }
+
 }

@@ -46,7 +46,6 @@ public class Controller extends JPanel implements ActionListener {
 //		if (e.getSource()==btnStep1){
 //			System.out.println("Dit werkt");
 //		}
-	}
-	
+	}	
 	
 }
