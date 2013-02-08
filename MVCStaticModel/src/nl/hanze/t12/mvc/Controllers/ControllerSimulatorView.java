@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFrame;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 import nl.hanze.t12.mvc.Models.Simulator;
 import nl.hanze.t12.mvc.Views.View;
@@ -19,6 +21,9 @@ public class ControllerSimulatorView extends Controller
 	private JButton btnStep100;
 	private JButton btnPause;
 	private JButton btnDiag;
+	private JButton btnSettingsOk;
+	private JButton btnSettingsCancel;
+	private JFrame frameSettings;
 	private JMenuItem close;
 	private JMenuItem settings;
 	private JCheckBoxMenuItem soundItem;
@@ -30,7 +35,7 @@ public class ControllerSimulatorView extends Controller
 		super(m);
 		simulator = m;
 		views = simulator.getViews();
-		this.setActionListeners();
+		setActionListeners();
 	}
 	
 	private void setActionListeners()
@@ -39,6 +44,7 @@ public class ControllerSimulatorView extends Controller
 		for(View v : views)
 		{
 			// sound = ...getSound(); 
+			
 			
 			btnStep1 = v.getButtonStepOne();
 			btnStep1.addActionListener(this);
@@ -52,20 +58,35 @@ public class ControllerSimulatorView extends Controller
 			btnDiag = v.getButtonDiag();
 			btnDiag.addActionListener(this);
 			
-//			close = v.getClose();
-//			close.addActionListener(this);
+			try {
+				close = v.getClose();
+				close.addActionListener(this);
+			} catch (NullPointerException e) {
+				
+			}
+			
+			btnSettingsOk = v.getOkSettingsButton();
+			//System.out.println(btnSettingsOk.toString());
+			btnSettingsOk.addActionListener(this);
+
+			
+			
+			btnSettingsCancel = v.getOkSettingsButton();
+			btnSettingsCancel.addActionListener(this);
+			
 			
 			settings = v.getSettings();
 			settings.addActionListener(this);
 			
-//			soundItem = v.getSound();
-//			soundItem.addActionListener(this);
-			
-		}
+				//soundItem = v.getSound();
+				//soundItem.addActionListener(this);
+			}
 	}
 	
 	public void actionPerformed(ActionEvent e)
 	{
+		System.out.println(e.toString());
+		
 		if (e.getSource() == btnStep1) 
 		{
 			simulator.simulateOneStep();
@@ -91,8 +112,22 @@ public class ControllerSimulatorView extends Controller
 		}
 		if (e.getSource() == settings)
 		{
-			System.out.println("Settings");
+			for(View v : views) 
+			{
+				v.createSettingsDialog();
+				v.setSettingsVisability();
+			}
 		}
+		if (e.getSource() == btnSettingsOk)
+		{
+			System.out.println("Er is op OK gedrukt!");
+		}
+		
+		if (e.getSource() == btnSettingsCancel)
+		{
+			System.out.println("Er is op cancel gedrukt!");
+		}
+		
 //		if (e.getSource == soundItem)
 //		{
 //			if (soundItem.getState() == true) {

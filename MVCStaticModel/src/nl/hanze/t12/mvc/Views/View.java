@@ -16,11 +16,14 @@ public class View extends JFrame {
     private JPanel contentPane;
 	private JButton btnStep1;
 	private JButton btnStep100;
-	private JButton btnPause;
-	private JButton btnDiag;
-	private JMenuItem close;
-	private JMenuItem settings;
-	private JCheckBoxMenuItem soundItem;
+//	private JButton btnPause;
+//	private JButton btnDiag;
+//	protected JButton btnSettingsOk;
+//	protected JButton btnSettingsCancel;
+//	private JFrame settingsFrame;
+//	private JMenuItem close;
+//	private JMenuItem settings;
+//	private JCheckBoxMenuItem soundItem; 
     
 	public View(Model model) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +48,7 @@ public class View extends JFrame {
 	
     public JButton getButtonStepOne()
     {
-    	return btnStep1;
+    	return null;
     }
     
     public JButton getButtonStep100()
@@ -55,27 +58,45 @@ public class View extends JFrame {
     
     public JButton getButtonPause()
     {
-    	return btnPause;
+    	return null;
     }
     
     public JButton getButtonDiag()
     {
-    	return btnDiag;
+    	return null;
     }
 
     public JMenuItem getClose()
     {
-    	return close;
+    	return null;
     }
     
-    public JMenuItem getSound()
-    {
-    	return soundItem;
+    public JMenuItem getSound() { return null; }
+    
+    public JMenuItem getSettings() { return null; }
+    
+    public void createSettingsDialog() 
+    { 
+    	
     }
     
-    public JMenuItem getSettings()
+    public JButton getOkSettingsButton()
     {
-    	return settings;
+    	return null;
     }
- 
+    
+    public JButton getCancelSettingsButton()
+    {
+    	return null;
+    }
+    
+    public JFrame getSettingsFrame()
+    {
+    	return null;
+    }
+    
+    public void setSettingsVisability()
+    {
+    
+    }
 }

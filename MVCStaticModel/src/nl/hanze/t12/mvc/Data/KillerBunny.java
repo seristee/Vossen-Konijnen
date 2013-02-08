@@ -16,7 +16,7 @@ public class KillerBunny extends Animal
     // The age at which a killerbunny can start to breed.
     private static final int BREEDING_AGE = 10;
     // The age to which a killerbunny can live.
-    private static final int MAX_AGE = 25;
+    private static int MAX_AGE = 25;
     // The likelihood of a killerbunny breeding.
     private static final double BREEDING_PROBABILITY = 0.08;
     // The maximum number of births.
@@ -217,5 +217,15 @@ public class KillerBunny extends Animal
     {
     	return name;
     
+    }
+    
+    public static int getMaxAge() 
+    {
+    	return MAX_AGE;
+    }
+    
+    public static void setMaxAge(int i)
+    {
+    	MAX_AGE = i;
     }
 }

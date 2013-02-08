@@ -27,4 +27,14 @@ public class Sound{
 			ex.printStackTrace();
 		}
 	}
+	
+	public void stop()
+	{
+		clip.stop();
+	}
+	
+	public void start()
+	{
+		clip.play();
+	}
 }

@@ -22,6 +22,7 @@ public class MVCStaticModel {
 		
 		simulator = new Simulator(); // <- extends model
 		controller = new ControllerSimulatorView(simulator);
+		//controller.setActionListeners();
 		simulator.runLongSimulation(); // Finally runs the simulator
 	}
 }

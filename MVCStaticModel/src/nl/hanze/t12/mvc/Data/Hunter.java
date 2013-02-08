@@ -22,7 +22,7 @@ public class Hunter extends Animal
     // The age at which a hunter can start to breed.
     private static final int BREEDING_AGE = 15;
     // The age to which a hunter can live.
-    private static final int MAX_AGE = 600;
+    private static int MAX_AGE = 600;
     // The likelihood of a hunter breeding.
     private static final double BREEDING_PROBABILITY = 0;
     // The maximum number of births.
@@ -200,5 +200,15 @@ public class Hunter extends Animal
     public String getName()
     {
     	return naam;
+    }
+    
+    public static int getMaxAge() 
+    {
+    	return MAX_AGE;
+    }
+    
+    public static void setMaxAge(int i)
+    {
+    	MAX_AGE = i;
     }
 }

@@ -35,10 +35,9 @@ public class SimulatorView extends View
     
     private Simulator model;
   
-    //private JPanel contentPane;
     private JButton btnStep1;
     private JButton btnStep100;
-    private JButton btnPause;
+    private JButton btnReset;
     private JButton btnDiag;
     private JMenuBar menuBarTop;
     private JMenuItem close;
@@ -46,6 +45,9 @@ public class SimulatorView extends View
     private JMenuItem settings;
     private JLabel labeli;
     private ImageIcon imagei;
+    private JFrame frameSettings;
+    private JButton btnSettingsOk;
+    private JButton btnSettingsCancel;
     
     /**
      * Create a view of the given width and height.
@@ -57,6 +59,8 @@ public class SimulatorView extends View
     {	
     	super(m);
     	model = m;
+    	
+        createSettingsDialog();
    
     	setResizable(false);
     	
@@ -68,6 +72,7 @@ public class SimulatorView extends View
     	file.add(close);
     	
     	JMenu options = new JMenu("Options");
+    	
     	settings = new JMenuItem("Settings");
     	sound = new JCheckBoxMenuItem("Sound", true);
     	
@@ -90,8 +95,8 @@ public class SimulatorView extends View
     	btnStep100 = new JButton("Step 100");
     	btnStep100.setBounds(0, 45, 89, 23);
     	
-    	btnPause = new JButton("Pause");
-    	btnPause.setBounds(0, 59, 89, 23);
+    	btnReset = new JButton("Reset");
+    	btnReset.setBounds(0, 59, 89, 23);
     	
     	btnDiag = new JButton("Populatie");
     	btnDiag.setBounds(0, 80, 89, 23);
@@ -115,7 +120,7 @@ public class SimulatorView extends View
         
         subPanel.add(btnStep1);
         subPanel.add(btnStep100);
-        subPanel.add(btnPause);
+        subPanel.add(btnReset);
         subPanel.add(btnDiag);
         add(labeli);
         
@@ -128,6 +133,7 @@ public class SimulatorView extends View
         setBackground(Color.GREEN); //speciaal voor Sander :3
         pack();
         setVisible(true);
+        
     }
     
     /**
@@ -214,7 +220,7 @@ public class SimulatorView extends View
     @Override
     public JButton getButtonPause()
     {
-    	return btnPause;
+    	return btnReset;
     }
     @Override
     public JButton getButtonDiag()
@@ -237,13 +243,90 @@ public class SimulatorView extends View
     	return settings;
     }
     
-   
-    /**
-     * Provide a graphical view of a rectangular field. This is 
-     * a nested class (a class defined inside a class) which
-     * defines a custom component for the user interface. This
-     * component displays the field.
-     * This is rather advanced GUI stuff - you can ignore this 
-     * for your project if you like.
-     */
+    @Override
+    public JButton getOkSettingsButton()
+    {
+    	return btnSettingsOk;
+    }
+    
+    @Override
+    public JButton getCancelSettingsButton()
+    {
+    	return btnSettingsCancel;
+    }
+    @Override
+    public JFrame getSettingsFrame()
+    {
+    	return frameSettings;
+    }
+    
+    public void setSettingsVisability()
+    {
+    	frameSettings.setVisible(true);
+    }
+    
+    @Override
+    public void createSettingsDialog()
+    {
+    	frameSettings = new JFrame("Settings");
+    	//frameSettings.setResizable(false);
+    	
+    	JLabel lblMaxAgeFox = new JLabel("Maximum age fox :");
+    	lblMaxAgeFox.setBounds(0, 0, 80, 30);
+    	
+    	JLabel lblMaxAgeKillerBunny = new JLabel("Maximum age killerbunny :");
+    	lblMaxAgeKillerBunny.setBounds(0, 20, 80, 30);
+    	
+    	JLabel lblMaxAgeRabbit = new JLabel("Maximum age rabbit :");
+    	lblMaxAgeRabbit.setBounds(0, 40, 80, 30);
+    	
+    	JLabel lblMaxAgeHunter = new JLabel("Maximum age hunter :");
+    	lblMaxAgeHunter.setBounds(0, 60, 80, 30);
+    	
+    	JTextField txtMaxAgeFox = new JTextField(model.getMaxAgeFox()); // todo get Values
+    	txtMaxAgeFox.setBounds(0, 0, 80, 30);
+    	
+    	JTextField txtMaxAgeKillerBunny = new JTextField(model.getMaxAgeKillerBunny());
+    	txtMaxAgeKillerBunny.setBounds(0, 20, 80, 30);
+    	
+    	JTextField txtMaxAgeRabbit = new JTextField(model.getMaxAgeRabbit());
+    	txtMaxAgeRabbit.setBounds(0, 40, 80, 30);
+    	
+    	JTextField txtMaxAgeHunter = new JTextField(model.getMaxAgeHunter());
+    	txtMaxAgeHunter.setBounds(0, 60, 80, 30);
+    	
+    	btnSettingsOk = new JButton("OK");
+    	btnSettingsOk.setBounds(40,100,60,20);
+    	
+    	btnSettingsCancel = new JButton("Cancel");
+    	btnSettingsCancel.setBounds(110, 100, 60, 20);
+    	
+    	// 2 subpanels!
+    	JPanel left = new JPanel();
+    	JPanel right = new JPanel();
+    	
+    	left.setPreferredSize(new Dimension(180, 130));
+    	
+    	right.setPreferredSize(new Dimension(180, 130));
+    	right.setLayout(null);
+    	
+    	left.add(lblMaxAgeFox);
+    	left.add(lblMaxAgeKillerBunny);
+    	left.add(lblMaxAgeRabbit);
+    	left.add(lblMaxAgeHunter);
+    	
+    	right.add(txtMaxAgeFox);
+    	right.add(txtMaxAgeKillerBunny);
+    	right.add(txtMaxAgeRabbit);
+    	right.add(txtMaxAgeHunter);
+    	right.add(btnSettingsOk);
+    	right.add(btnSettingsCancel);
+    	
+    	Container contents = frameSettings.getContentPane();
+        contents.add(left, BorderLayout.WEST);
+        contents.add(right, BorderLayout.EAST);
+    	
+    	frameSettings.pack();
+    }
+    
 }

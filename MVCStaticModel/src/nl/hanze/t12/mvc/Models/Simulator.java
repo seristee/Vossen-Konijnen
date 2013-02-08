@@ -277,4 +277,48 @@ public class Simulator extends Model
 		return this.animals;
 	}
 	
+	public Sound getSound()
+	{
+		return sound;
+	}
+	
+	public String getMaxAgeFox()
+	{
+		return new Integer(Fox.getMaxAge()).toString();
+	}
+	
+	public String getMaxAgeKillerBunny()
+	{
+		return new Integer(KillerBunny.getMaxAge()).toString();
+	}
+	
+	public String getMaxAgeRabbit()
+	{
+		return new Integer(Rabbit.getMaxAge()).toString();
+	}
+	
+	public String getMaxAgeHunter()
+	{
+		return new Integer(Hunter.getMaxAge()).toString();
+	}
+	
+	public void setMaxAgeFox(int i)
+	{
+		Fox.setMaxAge(i);
+	}
+	
+	public void setMaxAgeKillerBunny(int i)
+	{
+		KillerBunny.setMaxAge(i);
+	}
+	
+	public void setMaxAgeRabbit(int i)
+	{
+		Rabbit.setMaxAge(i);
+	}
+	
+	public void setMaxAgeHunter(int i)
+	{
+		Hunter.setMaxAge(i);
+	}
 }
